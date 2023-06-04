@@ -1,39 +1,362 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# __title1__
 
-Welcome,
+## This website is about [title](),
+<p>
+<br>
 
-This is the Code Institute student template for Codeanywhere. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+![image]()
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **May 11th, 2023**
+[]()  
+___
 
-## Codeanywhere Reminders
+## __Content__
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
+- [__title1__](#title1)
+  - [This website is about title,](#this-website-is-about-title)
+  - [__Content__](#content)
+  - [__User Experience__](#user-experience)
+  - [Visitors:](#visitors)
+  - [Goals:](#goals)
+  - [The website:](#the-website)
+  - [__Design__](#design)
+    - [Typography](#typography)
+  - [Font colors used:](#font-colors-used)
+    - [Wireframes](#wireframes)
+    - [Features](#features)
+  - [Programs and tools used](#programs-and-tools-used)
+  - [Languages used and its tests](#languages-used-and-its-tests)
+  - [Accessibility](#accessibility)
+  - [I did focus on making sure that the website is accessible:](#i-did-focus-on-making-sure-that-the-website-is-accessible)
+  - [Testing](#testing)
+  - [Bugs](#bugs)
+  - [Problems](#problems)
+  - [Deployment](#deployment)
+  - [Credits](#credits)
+  - [Acknowledgments](#acknowledgments)
+___
 
-`python3 -m http.server`
+## __User Experience__  
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+Visitors:
+- 
+- 
+-  
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
+Goals:
+- 
+- 
+- 
 
-`http_server`
+The website:
+- 
+- 
+- 
+- 
+- 
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+[Back to the top](#title1)
+___
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+## __Design__  
 
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+### Typography
 
-To log into the Heroku toolbelt CLI:
+Fonts used came from [Google Fonts](https://fonts.google.com/):
+- []()
+- []()
 
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+Font colors used:
+- 
+- 
+- 
+<br>
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+[Back to the top](#title1)
+___
 
----
+### Wireframes  
 
-Happy coding!
+- Created for mobile devices and desktops
+    - Home Page  
+    ![image]()  
+    <br>
+
+    -  Page  
+    ![image]()  
+    <br>
+
+    -  Page  
+    ![image]()  
+    <br>
+
+    -  Page  
+    ![image]()  
+    <br>
+
+    -  Page  
+    ![image]()  
+    <br>
+
+[Back to the top](#title1)
+___
+
+### Features  
+
+
+- #### Navigation
+
+    - 
+    -   
+
+    ![image]()
+<br>
+
+- ####  Page
+
+    - 
+    -   
+
+    ![image]()
+<br>
+
+- ####  Page
+
+    - 
+    -  
+
+    ![image]()
+<br>
+
+- ####  Page
+
+    - 
+    -   
+
+    ![image]()
+<br>
+
+- ####  Page
+
+    - 
+    -   
+
+    ![image]()
+<br>
+
+- ####  Page
+
+    -   
+
+    ![image]()
+<br>
+
+- #### 404 Error page
+
+    - This is a 404 Error page, just stating that the page wasn't found and gives the user a choice of going back to the Home page.  
+
+    ![image]()  
+
+[Back to the top](#title1)
+___ 
+
+## Programs and tools used
+
+- [Codeanywhere](https://app.codeanywhere.com/) - To create the website.
+- [Github](https://github.com/) - Where the website is stored.
+- [Google Fonts](https://fonts.google.com/) - For the fonts used in the website.
+- [Uiward](https://uizard.io/) - To create wireframes.
+- [Favicon](https://favicon.io/) - To create favicon.
+- [Am I Responsive?](https://ui.dev/amiresponsive) - To display the website on different websites.
+- [Spell Check](https://chrome.google.com/webstore/detail/webpage-spell-check/mgdhaoimpabdhmacaclbbjddhngchjik/related) - To check spelling.
+- [Google Tools](https://developer.chrome.com/docs/devtools/) - to check website styling and responsiveness.
+- [Cloud Convert](https://cloudconvert.com/) - To convert the images to different files.
+- [Gyazo](https://gyazo.com/) - To take Screenshots.
+- [Google maps](https://www.google.com/maps/) - To provide locations.
+- [Font Awesome](https://fontawesome.com/) - To display icons.
+- [W3C HTML](https://validator.w3.org/#validate_by_input) - To verify HTML.
+- [W3C CSS](https://jigsaw.w3.org/css-validator/#validate_by_input) - To verify CSS.
+- [Microsoft Word](https://www.microsoft.com/en-gb/microsoft-365/word?activetab=tabs%3afaqheaderregion3) - Used to write most of my documents.
+
+[Back to the top](#title1)
+___
+  
+## Languages used and its tests
+
+- ### HTML  
+    - No errors were found when tested with W3C vallidator.  
+        -  Page  
+        ![image]()  
+        <br>
+
+        -  Page  
+        ![image]()  
+        <br>
+
+        -  Page  
+        ![image]()  
+        <br>
+
+        -  Page  
+        ![image]()  
+        <br>
+
+        -  Page  
+        ![image]()  
+        <br>
+
+        - 404 Error Page  
+        ![image]()  
+        <br>
+
+- ### CSS  
+    - No errors were found when tested with W3C (Jigsaw) validator.  
+        - CSS  
+        ![image]()  
+
+[Back to the top](#title1)
+___
+
+## Accessibility
+
+I did focus on making sure that the website is accessible:
+- 
+- 
+- 
+- 
+- 
+- 
+
+[Back to the top](#title1)
+___
+
+- ### Lighthouse
+    - I can confirm that the fonts and colors chosen are easy to read and also Lighthouse performed really good.  
+
+        - ####  Page  
+        ![image]()  
+        <br>
+
+        - ####  Page  
+        ![image]()  
+        <br>
+
+        - ####  Page  
+        ![image]()  
+        <br>
+
+        - ####  Page  
+        ![image]()  
+        <br>
+
+        - ####  Page  
+        ![image]()  
+        <br>
+
+[Back to the top](#title1)
+___ 
+
+## Testing
+
+- 
+- 
+- 
+- 
+- 
+- 
+<br>
+
+[Back to the top](#title1)
+___ 
+
+## Bugs
+
+- 
+    - 
+- 
+    - 
+- 
+    - 
+- 
+    - 
+<br>
+
+[Back to the top](#title1)
+___ 
+
+## Problems
+
+-   
+    ![image]()  
+    <br>
+- 
+    ![image]()  
+    <br>
+
+[Back to the top](#title1)
+___
+
+## Deployment
+
+- The website was deployed to Github pages. Steps to deploy:
+    1. Log in into your github account.
+    2. In the Github repository select the project.
+    3. Navigate to the settings tab.
+    4. Then scroll down and on your left select Pages.
+    5. Go to branch, and select master branch.
+    6. Once master branch is selected, wait a moment and it will provide a page link to the website.
+The live link can be found here - [My Website]()
+<br>
+
+[Back to the top](#title1)
+___ 
+
+## Credits
+
+ - ### Content
+
+    - []()
+    - []()
+    - []()
+    - []()
+    - []()
+    - []()
+<br>
+
+ - ### Media
+
+    - 
+
+    - Websites used-
+       - [PicJumbo](https://picjumbo.com)
+       - [Pixabay](https://pixabay.com)
+       - [Unsplash](https://unsplash.com)
+       - [Pexels](https://www.pexels.com)
+
+    - Photos Authors and where to find them:
+       - 
+       - 
+       - 
+       - 
+       - 
+       - 
+       - 
+       - 
+       - 
+       - 404error - photo of  - by []()  
+
+    - The Favicon used - []()  
+    - Footer social network links from:
+        - [Facebook](https://www.facebook.com/)
+        - [Instagram](https://www.instagram.com/)
+        - [Twitter](https://twitter.com/)
+        - [Youtube](https://www.youtube.com/)
+
+[Back to the top](#title1)
+___ 
+
+## Acknowledgments
+
+- 
+- 
+
+[Back to the top](#title1)

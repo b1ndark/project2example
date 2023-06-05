@@ -1,163 +1,175 @@
-# __title1__
+# **History Quiz**
 
-## This website is about [title](),
+## This website is a [History Quiz](),
+
 <p>
 <br>
 
 ![image]()
 
-[]()  
-___
+[]()
 
-## __Content__
+---
 
-- [__title1__](#title1)
-  - [This website is about title,](#this-website-is-about-title)
-  - [__Content__](#content)
-  - [__User Experience__](#user-experience)
-  - [Visitors:](#visitors)
-  - [Goals:](#goals)
-  - [The website:](#the-website)
-  - [__Design__](#design)
+## **Content**
+
+- [**History Quiz**](#history-quiz)
+  - [This website is a History Quiz,](#this-website-is-a-history-quiz)
+  - [**Content**](#content)
+  - [**User Experience**](#user-experience)
+  - [**Design**](#design)
     - [Typography](#typography)
-  - [Font colors used:](#font-colors-used)
     - [Wireframes](#wireframes)
     - [Features](#features)
   - [Programs and tools used](#programs-and-tools-used)
   - [Languages used and its tests](#languages-used-and-its-tests)
   - [Accessibility](#accessibility)
-  - [I did focus on making sure that the website is accessible:](#i-did-focus-on-making-sure-that-the-website-is-accessible)
   - [Testing](#testing)
   - [Bugs](#bugs)
   - [Problems](#problems)
   - [Deployment](#deployment)
   - [Credits](#credits)
   - [Acknowledgments](#acknowledgments)
-___
 
-## __User Experience__  
+---
+
+## **User Experience**
 
 Visitors:
-- 
-- 
--  
+
+-
+-
+-
 
 Goals:
-- 
-- 
-- 
+
+-
+-
+-
 
 The website:
-- 
-- 
-- 
-- 
-- 
 
-[Back to the top](#title1)
-___
+-
+-
+-
+-
+-
 
-## __Design__  
+[Back to the top](#history-quiz)
+
+---
+
+## **Design**
 
 ### Typography
 
 Fonts used came from [Google Fonts](https://fonts.google.com/):
+
 - []()
 - []()
 
 Font colors used:
-- 
-- 
-- 
-<br>
 
-[Back to the top](#title1)
-___
+-
+-
+- <br>
 
-### Wireframes  
+[Back to the top](#history-quiz)
+
+---
+
+### Wireframes
 
 - Created for mobile devices and desktops
-    - Home Page  
+
+  - Home Page  
     ![image]()  
     <br>
 
-    -  Page  
+  - Page  
     ![image]()  
     <br>
 
-    -  Page  
+  - Page  
     ![image]()  
     <br>
 
-    -  Page  
+  - Page  
     ![image]()  
     <br>
 
-    -  Page  
+  - Page  
     ![image]()  
     <br>
 
-[Back to the top](#title1)
-___
+[Back to the top](#history-quiz)
 
-### Features  
+---
 
+### Features
 
 - #### Navigation
 
-    - 
-    -   
+      -
+      -
 
-    ![image]()
-<br>
+      ![image]()
 
-- ####  Page
+  <br>
 
-    - 
-    -   
+- #### Page
 
-    ![image]()
-<br>
+      -
+      -
 
-- ####  Page
+      ![image]()
 
-    - 
-    -  
+  <br>
 
-    ![image]()
-<br>
+- #### Page
 
-- ####  Page
+      -
+      -
 
-    - 
-    -   
+      ![image]()
 
-    ![image]()
-<br>
+  <br>
 
-- ####  Page
+- #### Page
 
-    - 
-    -   
+      -
+      -
 
-    ![image]()
-<br>
+      ![image]()
 
-- ####  Page
+  <br>
 
-    -   
+- #### Page
 
-    ![image]()
-<br>
+      -
+      -
+
+      ![image]()
+
+  <br>
+
+- #### Page
+
+      -
+
+      ![image]()
+
+  <br>
 
 - #### 404 Error page
 
-    - This is a 404 Error page, just stating that the page wasn't found and gives the user a choice of going back to the Home page.  
+  - This is a 404 Error page, just stating that the page wasn't found and gives the user a choice of going back to the Home page.
 
-    ![image]()  
+  ![image]()
 
-[Back to the top](#title1)
-___ 
+[Back to the top](#history-quiz)
+
+---
 
 ## Programs and tools used
 
@@ -177,186 +189,193 @@ ___
 - [W3C CSS](https://jigsaw.w3.org/css-validator/#validate_by_input) - To verify CSS.
 - [Microsoft Word](https://www.microsoft.com/en-gb/microsoft-365/word?activetab=tabs%3afaqheaderregion3) - Used to write most of my documents.
 
-[Back to the top](#title1)
-___
-  
+[Back to the top](#history-quiz)
+
+---
+
 ## Languages used and its tests
 
-- ### HTML  
-    - No errors were found when tested with W3C vallidator.  
-        -  Page  
-        ![image]()  
-        <br>
+- ### HTML
 
-        -  Page  
-        ![image]()  
-        <br>
+  - No errors were found when tested with W3C vallidator.
 
-        -  Page  
-        ![image]()  
-        <br>
+    - Page  
+      ![image]()  
+      <br>
 
-        -  Page  
-        ![image]()  
-        <br>
+    - Page  
+      ![image]()  
+      <br>
 
-        -  Page  
-        ![image]()  
-        <br>
+    - Page  
+      ![image]()  
+      <br>
 
-        - 404 Error Page  
-        ![image]()  
-        <br>
+    - Page  
+      ![image]()  
+      <br>
 
-- ### CSS  
-    - No errors were found when tested with W3C (Jigsaw) validator.  
-        - CSS  
-        ![image]()  
+    - Page  
+      ![image]()  
+      <br>
 
-[Back to the top](#title1)
-___
+    - 404 Error Page  
+      ![image]()  
+      <br>
+
+- ### CSS
+  - No errors were found when tested with W3C (Jigsaw) validator.
+    - CSS  
+      ![image]()
+
+[Back to the top](#history-quiz)
+
+---
 
 ## Accessibility
 
 I did focus on making sure that the website is accessible:
-- 
-- 
-- 
-- 
-- 
-- 
 
-[Back to the top](#title1)
-___
+-
+-
+-
+-
+-
+-
+
+[Back to the top](#history-quiz)
+
+---
 
 - ### Lighthouse
-    - I can confirm that the fonts and colors chosen are easy to read and also Lighthouse performed really good.  
 
-        - ####  Page  
-        ![image]()  
-        <br>
+  - I can confirm that the fonts and colors chosen are easy to read and also Lighthouse performed really good.
 
-        - ####  Page  
-        ![image]()  
-        <br>
+    - #### Page
 
-        - ####  Page  
-        ![image]()  
-        <br>
+      ![image]()  
+      <br>
 
-        - ####  Page  
-        ![image]()  
-        <br>
+    - #### Page
 
-        - ####  Page  
-        ![image]()  
-        <br>
+      ![image]()  
+      <br>
 
-[Back to the top](#title1)
-___ 
+    - #### Page
+
+      ![image]()  
+      <br>
+
+    - #### Page
+
+      ![image]()  
+      <br>
+
+    - #### Page
+      ![image]()  
+      <br>
+
+[Back to the top](#history-quiz)
+
+---
 
 ## Testing
 
-- 
-- 
-- 
-- 
-- 
-- 
-<br>
+-
+-
+-
+-
+-
+- <br>
 
-[Back to the top](#title1)
-___ 
+[Back to the top](#history-quiz)
+
+---
 
 ## Bugs
 
-- 
-    - 
-- 
-    - 
-- 
-    - 
-- 
-    - 
-<br>
+- -
+- -
+- -
+-     -
+  <br>
 
-[Back to the top](#title1)
-___ 
+[Back to the top](#history-quiz)
+
+---
 
 ## Problems
 
--   
-    ![image]()  
-    <br>
-- 
-    ![image]()  
-    <br>
+- ![image]()  
+  <br>
+- ![image]()  
+   <br>
 
-[Back to the top](#title1)
-___
+[Back to the top](#history-quiz)
+
+---
 
 ## Deployment
 
-- The website was deployed to Github pages. Steps to deploy:
-    1. Log in into your github account.
-    2. In the Github repository select the project.
-    3. Navigate to the settings tab.
-    4. Then scroll down and on your left select Pages.
-    5. Go to branch, and select master branch.
-    6. Once master branch is selected, wait a moment and it will provide a page link to the website.
-The live link can be found here - [My Website]()
-<br>
+- The website was deployed to Github pages. Steps to deploy: 1. Log in into your github account. 2. In the Github repository select the project. 3. Navigate to the settings tab. 4. Then scroll down and on your left select Pages. 5. Go to branch, and select master branch. 6. Once master branch is selected, wait a moment and it will provide a page link to the website.
+  The live link can be found here - [My Website]()
+  <br>
 
-[Back to the top](#title1)
-___ 
+[Back to the top](#history-quiz)
+
+---
 
 ## Credits
 
- - ### Content
+- ### Content
 
-    - []()
-    - []()
-    - []()
-    - []()
-    - []()
-    - []()
-<br>
+      - []()
+      - []()
+      - []()
+      - []()
+      - []()
+      - []()
 
- - ### Media
+  <br>
 
-    - 
+- ### Media
 
-    - Websites used-
-       - [PicJumbo](https://picjumbo.com)
-       - [Pixabay](https://pixabay.com)
-       - [Unsplash](https://unsplash.com)
-       - [Pexels](https://www.pexels.com)
+  -
 
-    - Photos Authors and where to find them:
-       - 
-       - 
-       - 
-       - 
-       - 
-       - 
-       - 
-       - 
-       - 
-       - 404error - photo of  - by []()  
+  - Websites used-
 
-    - The Favicon used - []()  
-    - Footer social network links from:
-        - [Facebook](https://www.facebook.com/)
-        - [Instagram](https://www.instagram.com/)
-        - [Twitter](https://twitter.com/)
-        - [Youtube](https://www.youtube.com/)
+    - [PicJumbo](https://picjumbo.com)
+    - [Pixabay](https://pixabay.com)
+    - [Unsplash](https://unsplash.com)
+    - [Pexels](https://www.pexels.com)
 
-[Back to the top](#title1)
-___ 
+  - Photos Authors and where to find them:
+
+    -
+    -
+    -
+    -
+    -
+    -
+    -
+    -
+    -
+    - 404error - photo of - by []()
+
+  - The Favicon used - []()
+  - Footer social network links from:
+    - [Facebook](https://www.facebook.com/)
+    - [Instagram](https://www.instagram.com/)
+    - [Twitter](https://twitter.com/)
+    - [Youtube](https://www.youtube.com/)
+
+[Back to the top](#history-quiz)
+
+---
 
 ## Acknowledgments
 
-- 
-- 
+-
+-
 
-[Back to the top](#title1)
+[Back to the top](#history-quiz)

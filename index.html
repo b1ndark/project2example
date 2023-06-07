@@ -21,42 +21,49 @@
 
 </head>
 
-<body id="main-container">
-
+<body>
     <!-- Title -->
     <div><a href="index.html">
             <h1>The History Quiz</h1>
         </a>
     </div>
-
     <!-- Quiz section -->
-    <div id="upper-container">
-
-        <!-- Menu and title -->
-        <div>
-            <h2>Welcome and Enjoy the History Quiz!</h2>
-        </div>
-        <div id="box-container choose-option">
+    <div class="container">
+        <!-- Main menu container -->
+        <div id="menu-container">
             <div>
-                <button type="button" class="button-style start">Start</button>
-                <button type="button" class="button-style how-to-play">How to play</button>
-                <button type="button" class="button-style score-board">Score board</button>
+                <h2>Welcome and Enjoy the History Quiz!</h2>
+            </div>
+            <div id="menu-buttons">
+                <button type="button" class="style-btn start">Start</button>
+                <button type="button" class="style-btn how-to-play">How to play</button>
+                <button type="button" class="style-btn score-board">Score board</button>
             </div>
         </div>
-    </div>
-    <div>
-        <!-- Dificulty menu and title -->
-        <div>
-            <h2>Choose the dificulty and let's play</h2>
-        </div>
-        <div id="box-container choose-option">
+        <!-- Difficulty container -->
+        <div id="difficulty-container" class="hide">
+            <div>
+                <h2>Choose the dificulty and let's play</h2>
+            </div>
             <div>
                 <button type="button" class="button-style easy-btn">Easy</button>
                 <button type="button" class="button-style medium-btn">Medium</button>
                 <button type="button" class="button-style Hard-btn">Hard</button>
-            </div>
-        </div>>
+            </div>>
+        </div>
+        <!-- Questions container -->
+        <div id="question-container" class="hide">
+            <div id="question">Question</div>
+            <div id="answer-buttons" class="btn-display">
+                <button class="btn">Answer 1</button>
+                <button class="btn">Answer 2</button>
+                <button class="btn">Answer 3</button>
+                <button class="btn">Answer 4</button>
+            </div>>
+        </div>
     </div>
+
+
 
     <!-- JavaScript -->
     <script src="assets/js/script.js"></script>

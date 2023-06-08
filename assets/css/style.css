@@ -69,8 +69,7 @@ h1 {
 
 /* Instructions container */
 
-
-
-#instructions-menu {
+#instructions-container {
     text-align: center;
+    font-size: 1.2rem;
 }

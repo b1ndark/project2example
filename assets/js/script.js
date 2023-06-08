@@ -1,6 +1,7 @@
 
 // buttons to access 
 const startButton = document.getElementById("start-btn");
+const howToPlayButton = document.getElementById("how-to-play");
 const easyButton = document.getElementById("easy-btn");
 const mediumButton = document.getElementById("medium-btn");
 const hardButton = document.getElementById("hard-btn");
@@ -9,6 +10,17 @@ const hardButton = document.getElementById("hard-btn");
 const startMenu = document.getElementById("menu-container");
 const difficultyContainerElement = document.getElementById("difficulty-container");
 const questionContainerElement = document.getElementById("question-container");
+const howToPlayContainerElement = document.getElementById("how-to-play-container");
+
+
+// By pressing How to Play it will take you to Instructions container
+howToPlayButton.addEventListener('click', selectHowToPlay);
+
+function selectHowToPlay() {
+    console.log("How to play");
+    startMenu.classList.add('hide');
+    howToPlayContainerElement.classList.remove('hide');
+}
 
 // By pressing Start it will take you to Difficulty Menu
 startButton.addEventListener('click', selectDifficulty);

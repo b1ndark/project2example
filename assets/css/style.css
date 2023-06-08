@@ -66,3 +66,7 @@ h1 {
 .hide {
     display: none;
 }
+
+#how-to-play-container {
+    text-align: center;
+}

@@ -67,12 +67,10 @@ h1 {
     display: none;
 }
 
-/* How to play container */
-#how-to-play-container {
-    text-align: center;
-}
+/* Instructions container */
 
-.btn-flex {
-    display: flex;
-    justify-content: space-evenly;
+
+
+#instructions-menu {
+    text-align: center;
 }

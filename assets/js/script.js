@@ -5,22 +5,35 @@ const howToPlayButton = document.getElementById("how-to-play");
 const easyButton = document.getElementById("easy-btn");
 const mediumButton = document.getElementById("medium-btn");
 const hardButton = document.getElementById("hard-btn");
+const instructionsButton = document.getElementById("instructions-btn");
+const closeInstructionsButton = document.getElementById("close-instructions-btn");
+
 
 // Containers
 const startMenu = document.getElementById("menu-container");
 const difficultyContainerElement = document.getElementById("difficulty-container");
 const questionContainerElement = document.getElementById("question-container");
-const howToPlayContainerElement = document.getElementById("how-to-play-container");
+const instructionsContainerElement = document.getElementById("instructions-container");
 
 
-// By pressing How to Play it will take you to Instructions container
-howToPlayButton.addEventListener('click', selectHowToPlay);
+// By pressing Instructions it will take you to Instructions container
+instructionsButton.addEventListener('click', selectInstructions);
 
-function selectHowToPlay() {
-    console.log("How to play");
+function selectInstructions() {
+    console.log("instructions");
     startMenu.classList.add('hide');
-    howToPlayContainerElement.classList.remove('hide');
+    instructionsContainerElement.classList.remove('hide');
 }
+
+// Closing instructions
+closeInstructionsButton.addEventListener('click', selectMainMenu);
+
+function selectMainMenu() {
+    console.log("close");
+    instructionsContainerElement.classList.add('hide');
+    startMenu.classList.remove('hide');
+}
+
 
 // By pressing Start it will take you to Difficulty Menu
 startButton.addEventListener('click', selectDifficulty);

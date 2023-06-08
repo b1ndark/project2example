@@ -67,6 +67,12 @@ h1 {
     display: none;
 }
 
+/* How to play container */
 #how-to-play-container {
     text-align: center;
+}
+
+.btn-flex {
+    display: flex;
+    justify-content: space-evenly;
 }

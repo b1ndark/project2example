@@ -1,5 +1,5 @@
 
-// buttons to access 
+// buttons to access its containers and difficulties
 const startButton = document.getElementById("start-btn");
 const howToPlayButton = document.getElementById("how-to-play");
 const easyButton = document.getElementById("easy-btn");

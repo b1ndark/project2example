@@ -15,11 +15,6 @@ const difficultyContainerElement = document.getElementById("difficulty-container
 const questionContainerElement = document.getElementById("question-container");
 const instructionsContainerElement = document.getElementById("instructions-container");
 
-const questionElement = document.getElementById('question');
-const answerButtonsElement = document.getElementById("answer-buttons");
-
-const shuffledQuestions, currentQuestionIndex;
-
 
 // By pressing Instructions it will take you to Instructions container
 instructionsButton.addEventListener('click', selectInstructions);
@@ -49,18 +44,22 @@ function selectDifficulty() {
     difficultyContainerElement.classList.remove('hide');
 }
 
-// This function will select Easy mode
+const questionElement = document.getElementById('question');
+const answerButtonsElement = document.getElementById("answer-buttons");
+
+let shuffledQuestions, currentQuestionIndex;
+
+
+// This function will select Easy mode and start it 
 easyButton.addEventListener('click', selectEasy);
 
 function selectEasy() {
     console.log("easy");
     difficultyContainerElement.classList.add('hide');
-    shuffledQuestions = questions.sort(() => Math.random() - .5);
+    shuffledQuestions = easyQuestions.sort(() => Math.random() - .5);
     currentQuestionIndex = 0;
     questionContainerElement.classList.remove('hide');
-    setNextQuestion() {
-
-    }
+    setNextQuestion();
 }
 
 // This function will select Medium mode
@@ -82,4 +81,14 @@ function selectHard() {
     difficultyContainerElement.classList.add('hide');
     questionContainerElement.classList.remove('hide');
 }
+
+
+function setNextQuestion() {
+    showQuestion(shuffledQuestions[currentQuestionIndex]);
+}
+
+function showQuestion(question) {
+    questionElement.innerHTML = question.question;
+}
+
 

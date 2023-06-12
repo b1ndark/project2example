@@ -72,3 +72,5 @@ function selectHard() {
     difficultyContainerElement.classList.add('hide');
     questionContainerElement.classList.remove('hide');
 }
+
+

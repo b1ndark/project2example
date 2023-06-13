@@ -1,6 +1,6 @@
-# **History Quiz**
+# **Quiz**
 
-## This website is a [History Quiz](),
+## This website is a [Quiz](),
 
 <p>
 <br>
@@ -13,8 +13,8 @@
 
 ## **Content**
 
-- [**History Quiz**](#history-quiz)
-  - [This website is a History Quiz,](#this-website-is-a-history-quiz)
+- [**Quiz**](#quiz)
+  - [This website is a Quiz,](#this-website-is-a-quiz)
   - [**Content**](#content)
   - [**User Experience**](#user-experience)
   - [**Design**](#design)
@@ -55,7 +55,7 @@ The website:
 -
 -
 
-[Back to the top](#history-quiz)
+[Back to the top](#quiz)
 
 ---
 
@@ -74,7 +74,7 @@ Font colors used:
 -
 - <br>
 
-[Back to the top](#history-quiz)
+[Back to the top](#quiz)
 
 ---
 
@@ -102,7 +102,7 @@ Font colors used:
     ![image]()  
     <br>
 
-[Back to the top](#history-quiz)
+[Back to the top](#quiz)
 
 ---
 
@@ -167,7 +167,7 @@ Font colors used:
 
   ![image]()
 
-[Back to the top](#history-quiz)
+[Back to the top](#quiz)
 
 ---
 
@@ -189,7 +189,7 @@ Font colors used:
 - [W3C CSS](https://jigsaw.w3.org/css-validator/#validate_by_input) - To verify CSS.
 - [Microsoft Word](https://www.microsoft.com/en-gb/microsoft-365/word?activetab=tabs%3afaqheaderregion3) - Used to write most of my documents.
 
-[Back to the top](#history-quiz)
+[Back to the top](#quiz)
 
 ---
 
@@ -228,7 +228,7 @@ Font colors used:
     - CSS  
       ![image]()
 
-[Back to the top](#history-quiz)
+[Back to the top](#quiz)
 
 ---
 
@@ -243,7 +243,7 @@ I did focus on making sure that the website is accessible:
 -
 -
 
-[Back to the top](#history-quiz)
+[Back to the top](#quiz)
 
 ---
 
@@ -275,7 +275,7 @@ I did focus on making sure that the website is accessible:
       ![image]()  
       <br>
 
-[Back to the top](#history-quiz)
+[Back to the top](#quiz)
 
 ---
 
@@ -288,7 +288,7 @@ I did focus on making sure that the website is accessible:
 -
 - <br>
 
-[Back to the top](#history-quiz)
+[Back to the top](#quiz)
 
 ---
 
@@ -300,7 +300,7 @@ I did focus on making sure that the website is accessible:
 -     -
   <br>
 
-[Back to the top](#history-quiz)
+[Back to the top](#quiz)
 
 ---
 
@@ -311,7 +311,7 @@ I did focus on making sure that the website is accessible:
 - ![image]()  
    <br>
 
-[Back to the top](#history-quiz)
+[Back to the top](#quiz)
 
 ---
 
@@ -321,7 +321,7 @@ I did focus on making sure that the website is accessible:
   The live link can be found here - [My Website]()
   <br>
 
-[Back to the top](#history-quiz)
+[Back to the top](#quiz)
 
 ---
 
@@ -369,7 +369,7 @@ I did focus on making sure that the website is accessible:
     - [Twitter](https://twitter.com/)
     - [Youtube](https://www.youtube.com/)
 
-[Back to the top](#history-quiz)
+[Back to the top](#quiz)
 
 ---
 
@@ -378,4 +378,4 @@ I did focus on making sure that the website is accessible:
 -
 -
 
-[Back to the top](#history-quiz)
+[Back to the top](#quiz)

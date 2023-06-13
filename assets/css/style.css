@@ -47,6 +47,10 @@ h1 {
     justify-content: center;
 }
 
+.next-btn {
+    display: block;
+}
+
 /* Container styling */
 
 .container {

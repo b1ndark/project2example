@@ -103,8 +103,16 @@ function showQuestion(question) {
 }
 
 
-function selectAnswer(e) {
+function selectAnswer(event) {
+    const selectedButton = event.target;
+    const correct = selectedButton.dataset.correct;
+    setStatusClass(document.body, correct);
+    Array.from(answerButtonsElement.children).forEach(button => {
+        setStatusClass(button, button.dataset.correct);
+    });
+    if (shuffledQuestions.length > currentQuestionIndex + 1)
+        currentQuestionIndex++;
+    setNextQuestion();
 
 }
-
 

@@ -18,5 +18,4 @@ const easyQuestions = [{
         { text: '2000', correct: false }
     ]
 }
-
 ];

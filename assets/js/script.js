@@ -173,4 +173,3 @@ function selectHard() {
     questionContainerElement.classList.remove('hide');
 }
 
-

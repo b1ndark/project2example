@@ -62,29 +62,39 @@ function selectEasyQuiz() {
     nextQuestionButton.innerHTML = "Next";
     showEasyQuestion();
 }
+
+function resetEasyState() {
+    while (answerButtons.firstChild) {
+        answerButtons.removeChild(answerButtons.firstChild);
+    }
+}
+
 //Show questions and answers
 function showEasyQuestion() {
+
     console.log("show question");
     /**
      * This function will show current question
      * Data for for the questions will be collected from game.js file
      **/
-    let currentQuestion = easyQuestions[currentQuestionIndex];
-    questionElement.innerHTML = currentQuestion.question;
+    let currentEasyQuestion = easyQuestions[currentQuestionIndex];
+    questionElement.innerHTML = currentEasyQuestion.question;
 
     /**
      *  Function is to show answers of the current question
      *  It will add a button for each answer of the current question, in this case 4 answers
      *  Data for for the answers will be collected from game.js file
      **/
-    currentQuestion.answers.forEach(answer => {
-        console.log("answers displayed")
+    currentEasyQuestion.answers.forEach(answer => {
+        console.log("answers displayed");
         const answerButton = document.createElement("button");
         answerButton.innerHTML = answer.text;
         answerButton.classList.add("btn");
         answerButtons.appendChild(answerButton);
+        
     });
 };
+
 
 
 

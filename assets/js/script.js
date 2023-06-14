@@ -101,6 +101,14 @@ function showEasyQuestion() {
 function selectEasyAnswer(event) {
     console.log("selected answer");
     const selectedBtn = event.target;
+    const isCorrect = selectedBtn.dataset.correct === "true";
+    if (isCorrect) {
+        console.log("correct-answer")
+        selectedBtn.classList.add("correct-answer");
+    } else {
+        console.log("wrong-answer")
+        selectedBtn.classList.add("wrong-answer");
+    }
 
 }
 

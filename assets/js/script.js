@@ -1,13 +1,12 @@
 
 // buttons to access its containers and difficulties
 const startButton = document.getElementById("start-btn");
-const howToPlayButton = document.getElementById("how-to-play");
 const easyButton = document.getElementById("easy-btn");
 const mediumButton = document.getElementById("medium-btn");
 const hardButton = document.getElementById("hard-btn");
 const instructionsButton = document.getElementById("instructions-btn");
 const closeInstructionsButton = document.getElementById("close-instructions-btn");
-
+const difficultyMenuButton = document.getElementById("difficulty-menu-btn");
 
 // Containers
 const startMenu = document.getElementById("menu-container");
@@ -44,23 +43,27 @@ function selectDifficulty() {
     difficultyContainerElement.classList.remove('hide');
 }
 
-const questionElement = document.getElementById('question');
-const answerButtonsElement = document.getElementById("answer-buttons");
+const questionElement = document.getElementById("question");
+const answerButtons = document.getElementById("answer-buttons");
+const nextQuestionButton = document.getElementById("next-btn");
 
-let shuffledQuestions, currentQuestionIndex;
-
+let currentQuestionIndex = 0;
+let score = 0;
 
 // This function will select Easy mode and start it 
-easyButton.addEventListener('click', selectEasy);
+easyButton.addEventListener('click', selectEasyQuiz);
 
-function selectEasy() {
+function selectEasyQuiz() {
     console.log("easy");
     difficultyContainerElement.classList.add('hide');
-    shuffledQuestions = easyQuestions.sort(() => Math.random() - .5);
-    currentQuestionIndex = 0;
     questionContainerElement.classList.remove('hide');
-    setNextQuestion();
+    currentQuestionIndex = 0;
+    score = 0;
+    nextQuestionButton.innerHTML = "Next";
+    showEasyQuestion();
 }
+
+
 
 // This function will select Medium mode
 
@@ -82,37 +85,4 @@ function selectHard() {
     questionContainerElement.classList.remove('hide');
 }
 
-
-function setNextQuestion() {
-    showQuestion(shuffledQuestions[currentQuestionIndex]);
-}
-
-function showQuestion(question) {
-    questionElement.innerHTML = question.question;
-    question.answers.forEach(answer => {
-        const button = document.createElement('button');
-        button.innerText = answer.text;
-        button.classList.add('btn');
-        if (answer.correct) {
-            button.dataset.correct = answer.correct;
-        }
-        button.addEventListener('click', selectAnswer);
-        answerButtonsElement.appendChild(button);
-    });
-
-}
-
-
-function selectAnswer(event) {
-    const selectedButton = event.target;
-    const correct = selectedButton.dataset.correct;
-    setStatusClass(document.body, correct);
-    Array.from(answerButtonsElement.children).forEach(button => {
-        setStatusClass(button, button.dataset.correct);
-    });
-    if (shuffledQuestions.length > currentQuestionIndex + 1)
-        currentQuestionIndex++;
-    setNextQuestion();
-
-}
 

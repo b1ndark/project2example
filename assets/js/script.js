@@ -91,11 +91,18 @@ function showEasyQuestion() {
         answerButton.innerHTML = answer.text;
         answerButton.classList.add("btn");
         answerButtons.appendChild(answerButton);
-        
+        if (answer.correct) {
+            answerButton.dataset.correct = answer.correct;
+        }
+        answerButton.addEventListener('click', selectEasyAnswer);
     });
 };
 
+function selectEasyAnswer(event) {
+    console.log("selected answer");
+    const selectedBtn = event.target;
 
+}
 
 
 

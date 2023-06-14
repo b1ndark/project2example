@@ -91,3 +91,12 @@ h1 {
     font-size: 1.2rem;
 }
 
+/* answers */
+
+.correct-answer {
+    background: rgb(21, 219, 4);
+}
+
+.wrong-answer {
+    background: rgb(236, 32, 32);
+}

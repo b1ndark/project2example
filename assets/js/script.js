@@ -103,12 +103,19 @@ function selectEasyAnswer(event) {
     const selectedBtn = event.target;
     const isCorrect = selectedBtn.dataset.correct === "true";
     if (isCorrect) {
-        console.log("correct-answer")
+        console.log("correct-answer");
         selectedBtn.classList.add("correct-answer");
     } else {
-        console.log("wrong-answer")
+        console.log("wrong-answer");
         selectedBtn.classList.add("wrong-answer");
     }
+    Array.from(answerButtons.children).forEach(button => {
+        if (button.dataset.correct === "true") {
+            button.classList.add("correct-answer");
+        }
+        button.disabled = true;
+        console.log("answers blocked");
+    });
 
 }
 

@@ -116,6 +116,7 @@ function selectEasyAnswer(event) {
         button.disabled = true;
         console.log("answers blocked");
     });
+    nextQuestionButton.style.display = "block";
 
 }
 

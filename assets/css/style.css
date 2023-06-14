@@ -38,10 +38,13 @@ h1 {
     transition: all 0.2s;
 }
 
-.btn:hover {
+.btn:hover:not([disabled]) {
     background-color: #464646;
 }
 
+.btn:disabled {
+    cursor: none;
+}
 
 .btn-display {
     display: grid;

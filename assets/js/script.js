@@ -63,6 +63,15 @@ function selectEasyQuiz() {
     showEasyQuestion();
 }
 
+function showEasyQuestion() {
+    console.log("show question");
+    let currentQuestion = easyQuestions[currentQuestionIndex];
+    let questionNo = currentQuestionIndex + 1;
+    questionElement.innerHTML = currentQuestion.question;
+
+};
+
+
 
 
 // This function will select Medium mode

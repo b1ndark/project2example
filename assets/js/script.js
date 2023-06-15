@@ -54,6 +54,8 @@ function selectMainMenu() {
 startButton.addEventListener('click', selectDifficulty);
 
 function selectDifficulty() {
+    questionElement.innerHTML = "";
+    difficultyMenuButton.style.display = "none";
     console.log('difficulty menu');
     startMenu.classList.add('hide');
     difficultyContainerElement.classList.remove('hide');
@@ -151,6 +153,14 @@ function selectEasyAnswer(event) {
 
 }
 
+
+function showScore() {
+    resetEasyState();
+    questionElement.innerHTML = `You have scored ${score} out of ${easyQuestions.length}!`;
+    nextQuestionButton.style.display = "none";
+    difficultyMenuButton.style.display = "block";
+    difficultyMenuButton.addEventListener('click', selectDifficulty);
+}
 
 
 function handleNextQuestionButton() {

@@ -65,10 +65,13 @@ function selectDifficulty() {
 
 const questionElement = document.getElementById("question");
 const questionMediumElement = document.getElementById("question");
+const questionHardElement = document.getElementById("question");
 const answerButtons = document.getElementById("answer-buttons");
 const answerMediumButtons = document.getElementById("answer-buttons");
+const answerHardButtons = document.getElementById("answer-buttons");
 const nextQuestionButton = document.getElementById("next-btn");
 const nextMediumQuestionButton = document.getElementById("next-btn");
+const nextHardQuestionButton = document.getElementById("next-btn");
 
 let currentQuestionIndex = 0;
 let score = 0;
@@ -203,9 +206,9 @@ function selectMediumQuiz() {
 
 
     /**
- * This function will reset the answer buttons from its questions
- * 
- */
+    * This function will reset the answer buttons from its questions
+    * 
+    */
     function resetMediumState() {
         while (answerMediumButtons.firstChild) {
             answerMediumButtons.removeChild(answerMediumButtons.firstChild);
@@ -305,11 +308,112 @@ function selectMediumQuiz() {
 
 // This function will select Hard mode
 
-hardButton.addEventListener('click', selectHard);
+hardButton.addEventListener('click', selectHardQuiz);
 
-function selectHard() {
+function selectHardQuiz() {
     console.log("hard");
     difficultyContainerElement.classList.add('hide');
     questionContainerElement.classList.remove('hide');
+    currentQuestionIndex = 0;
+    score = 0;
+    nextHardQuestionButton.innerHTML = "Next";
+    showHardQuestion();
+
+    /**
+    * This function will reset the answer buttons from its questions
+    * 
+    */
+    function resetHardState() {
+        while (answerHardButtons.firstChild) {
+            answerHardButtons.removeChild(answerHardButtons.firstChild);
+        }
+    }
+
+    //Show questions and answers
+    function showHardQuestion() {
+        resetHardState();
+        console.log("show question");
+        /**
+         * This function will show current question
+         * Data for the questions will be collected from game.js file
+         **/
+        let currentHardQuestion = hardQuestions[currentQuestionIndex];
+        questionHardElement.innerHTML = currentHardQuestion.questionH;
+
+        /**
+         *  This Function is to show answers of the current question
+         *  It will add a button for each answer of the current question, in this case 4 answers
+         *  Data for the answers will be collected from game.js file
+         **/
+        currentHardQuestion.answers.forEach(answer => {
+            console.log("answers displayed");
+            const answerHardButton = document.createElement("button");
+            answerHardButton.innerHTML = answer.text;
+            answerHardButton.classList.add("btn");
+            answerHardButtons.appendChild(answerHardButton);
+            if (answer.correct) {
+                answerHardButton.dataset.correct = answer.correct;
+            }
+            answerHardButton.addEventListener('click', selectHardAnswer);
+        });
+    };
+
+    /**
+     * This function will activate as soon as the user selects an answer
+     */
+
+    function selectHardAnswer(eventH) {
+        console.log("selected answer");
+        const selectedBtn = eventH.target;
+        const isCorrect = selectedBtn.dataset.correct === "true";
+        // Here the function will check if the answer is correct or not
+        if (isCorrect) {
+            console.log("correct-answer");
+            selectedBtn.classList.add("correct-answer");
+            score++;
+        } else {
+            console.log("wrong-answer");
+            selectedBtn.classList.add("wrong-answer");
+        }
+        // Soon as the answer is selected where true or false, all the answers will be locked
+        Array.from(answerButtons.children).forEach(button => {
+            if (button.dataset.correct === "true") {
+                button.classList.add("correct-answer");
+            }
+            button.disabled = true;
+            console.log("answers blocked");
+        });
+        // Once the answers are selected and locked, the Next button will be displayed
+        nextHardQuestionButton.style.display = "block";
+
+    }
+
+
+    function showHardScore() {
+        resetHardState();
+        questionHardElement.innerHTML = `You have scored ${score} out of ${hardQuestions.length}!`;
+        nextQuestionButton.style.display = "none";
+        backToIndexButton.style.display = "block";
+    }
+
+
+    function handleNextHardQuestionButton() {
+        currentQuestionIndex++;
+        if (currentQuestionIndex < hardQuestions.length) {
+            showHardQuestion();
+        } else {
+            showHardScore();
+        }
+    }
+
+
+    nextHardQuestionButton.addEventListener('click', () => {
+        if (currentQuestionIndex < hardQuestions.length) {
+            handleNextHardQuestionButton();
+        } else {
+            selectHardQuiz();
+        }
+    });
+
 }
 

@@ -38,3 +38,42 @@ const easyQuestions = [
         ]
     }
 ];
+
+const mediumQuestions = [
+    {
+        question: 'Where did the Industrial Revolution started?',
+        answers: [
+            { text: 'Sweden', correct: false },
+            { text: 'Italy', correct: false },
+            { text: 'Great Britain', correct: true },
+            { text: 'Spain', correct: false }
+        ]
+    },
+    {
+        question: 'What year did the Industrial Revolution started?',
+        answers: [
+            { text: '1850', correct: false },
+            { text: '1998', correct: false },
+            { text: '1760', correct: true },
+            { text: '1800', correct: false }
+        ]
+    },
+    {
+        question: 'Where did the Carnation Revolution happened?',
+        answers: [
+            { text: 'Portugal', correct: true },
+            { text: 'Australia', correct: false },
+            { text: 'France', correct: false },
+            { text: 'USA', correct: false }
+        ]
+    },
+    {
+        question: 'What counrties were part of Axis group in WW2?',
+        answers: [
+            { text: 'Spain, Greece and Sweden', correct: false },
+            { text: 'Germany, Italy, and Japan', correct: true },
+            { text: 'USA, United Kingdom, and India', correct: false },
+            { text: 'Brasil, Colombia and Chile', correct: false }
+        ]
+    }
+];

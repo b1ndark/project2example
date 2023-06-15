@@ -51,6 +51,14 @@ h2 {
     transition: all 0.2s;
 }
 
+#back-Index-btn {
+    margin: 20px auto;
+}
+
+#back-Index-btn a {
+    color: #fff;
+}
+
 .btn:hover:not([disabled]) {
     background-color: #464646;
 }

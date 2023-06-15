@@ -41,7 +41,7 @@ const easyQuestions = [
 
 const mediumQuestions = [
     {
-        question: 'Where did the Industrial Revolution started?',
+        questionM: 'Where did the Industrial Revolution started?',
         answers: [
             { text: 'Sweden', correct: false },
             { text: 'Italy', correct: false },
@@ -50,7 +50,7 @@ const mediumQuestions = [
         ]
     },
     {
-        question: 'What year did the Industrial Revolution started?',
+        questionM: 'What year did the Industrial Revolution started?',
         answers: [
             { text: '1850', correct: false },
             { text: '1998', correct: false },
@@ -59,7 +59,7 @@ const mediumQuestions = [
         ]
     },
     {
-        question: 'Where did the Carnation Revolution happened?',
+        questionM: 'Where did the Carnation Revolution happened?',
         answers: [
             { text: 'Portugal', correct: true },
             { text: 'Australia', correct: false },
@@ -68,7 +68,7 @@ const mediumQuestions = [
         ]
     },
     {
-        question: 'What counrties were part of Axis group in WW2?',
+        questionM: 'What counrties were part of Axis group in WW2?',
         answers: [
             { text: 'Spain, Greece and Sweden', correct: false },
             { text: 'Germany, Italy, and Japan', correct: true },

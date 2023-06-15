@@ -170,6 +170,7 @@ function selectEasyQuiz() {
 
 
     function handleNextQuestionButton() {
+        nextQuestionButton.style.display = "none";
         currentQuestionIndex++;
         if (currentQuestionIndex < easyQuestions.length) {
             showEasyQuestion();
@@ -284,6 +285,7 @@ function selectMediumQuiz() {
 
 
     function handleNextMediumQuestionButton() {
+        nextQuestionButton.style.display = "none";
         currentQuestionIndex++;
         if (currentQuestionIndex < mediumQuestions.length) {
             showMediumQuestion();
@@ -398,6 +400,7 @@ function selectHardQuiz() {
 
 
     function handleNextHardQuestionButton() {
+        nextQuestionButton.style.display = "none";
         currentQuestionIndex++;
         if (currentQuestionIndex < hardQuestions.length) {
             showHardQuestion();

@@ -94,7 +94,7 @@ function resetEasyState() {
 
 //Show questions and answers
 function showEasyQuestion() {
-
+    resetEasyState();
     console.log("show question");
     /**
      * This function will show current question
@@ -133,6 +133,7 @@ function selectEasyAnswer(event) {
     if (isCorrect) {
         console.log("correct-answer");
         selectedBtn.classList.add("correct-answer");
+        score++;
     } else {
         console.log("wrong-answer");
         selectedBtn.classList.add("wrong-answer");
@@ -151,6 +152,24 @@ function selectEasyAnswer(event) {
 }
 
 
+
+function handleNextQuestionButton() {
+    currentQuestionIndex++;
+    if (currentQuestionIndex < easyQuestions.length) {
+        showEasyQuestion();
+    } else {
+        showScore();
+    }
+}
+
+
+nextQuestionButton.addEventListener('click', () => {
+    if (currentQuestionIndex < easyQuestions.length) {
+        handleNextQuestionButton();
+    } else {
+        selectEasyQuiz();
+    }
+});
 
 
 // This function will select Medium mode

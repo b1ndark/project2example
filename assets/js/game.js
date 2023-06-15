@@ -28,7 +28,7 @@ const easyQuestions = [
             { text: '2000', correct: false }
         ]
     },
-     {
+    {
         question: 'What year did WW2 finished?',
         answers: [
             { text: '1975', correct: false },

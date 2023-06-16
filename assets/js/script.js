@@ -234,7 +234,7 @@ function selectMediumQuiz() {
         let currentMediumQuestion = mediumQuestions[currentQuestionIndex];
         questionMediumElement.innerHTML = currentMediumQuestion.questionM;
         currentQuestionIndex++;
-        questionCounterText.innerHTML = `${currentQuestionIndex}/${easyQuestions.length}`;
+        questionCounterText.innerHTML = `${currentQuestionIndex}/${mediumQuestions.length}`;
 
         /**
          *  This Function is to show answers of the current question
@@ -342,7 +342,7 @@ function selectHardQuiz() {
         let currentHardQuestion = hardQuestions[currentQuestionIndex];
         questionHardElement.innerHTML = currentHardQuestion.questionH;
         currentQuestionIndex++;
-        questionCounterText.innerHTML = `${currentQuestionIndex}/${easyQuestions.length}`;
+        questionCounterText.innerHTML = `${currentQuestionIndex}/${hardQuestions.length.length}`;
 
         /**
          *  This Function is to show answers of the current question

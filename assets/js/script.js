@@ -69,9 +69,6 @@ const questionHardElement = document.getElementById("question");
 const answerButtons = document.getElementById("answer-buttons");
 const answerMediumButtons = document.getElementById("answer-buttons");
 const answerHardButtons = document.getElementById("answer-buttons");
-const nextQuestionButton = document.getElementById("next-btn");
-const nextMediumQuestionButton = document.getElementById("next-btn");
-const nextHardQuestionButton = document.getElementById("next-btn");
 const scoreDisplay = document.getElementById("score-area");
 
 
@@ -110,7 +107,6 @@ function selectEasyQuiz() {
     questionContainerElement.classList.remove('hide');
     currentQuestionIndex = 0;
     score = 0;
-    nextQuestionButton.innerHTML = "Next";
     showEasyQuestion();
 
 
@@ -180,8 +176,10 @@ function selectEasyQuiz() {
             button.disabled = true;
             console.log("answers blocked");
         });
-        // Once the answers are selected and locked, the Next button will be displayed
-        nextQuestionButton.style.display = "block";
+        // Once answer is selected whether is correct or wrong it will automatically move to the next one
+        setTimeout(() => {
+            handleNextQuestion();
+        }, 2000);
 
     }
 
@@ -189,14 +187,12 @@ function selectEasyQuiz() {
     function showScore() {
         resetEasyState();
         questionElement.innerHTML = `You have scored ${score} out of ${easyQuestions.length}!`;
-        nextQuestionButton.style.display = "none";
         backToIndexButton.style.display = "block";
         scoreDisplay.style.display = "none";
     }
 
 
-    function handleNextQuestionButton() {
-        nextQuestionButton.style.display = "none";
+    function handleNextQuestion() {
         currentQuestionIndex++;
         if (currentQuestionIndex < easyQuestions.length) {
             showEasyQuestion();
@@ -205,14 +201,6 @@ function selectEasyQuiz() {
         }
     }
 
-
-    nextQuestionButton.addEventListener('click', () => {
-        if (currentQuestionIndex < easyQuestions.length) {
-            handleNextQuestionButton();
-        } else {
-            selectEasyQuiz();
-        }
-    });
 
 }
 
@@ -229,7 +217,6 @@ function selectMediumQuiz() {
     questionContainerElement.classList.remove('hide');
     currentQuestionIndex = 0;
     score = 0;
-    nextMediumQuestionButton.innerHTML = "Next";
     showMediumQuestion();
 
 
@@ -299,8 +286,10 @@ function selectMediumQuiz() {
             button.disabled = true;
             console.log("answers blocked");
         });
-        // Once the answers are selected and locked, the Next button will be displayed
-        nextMediumQuestionButton.style.display = "block";
+        // Once answer is selected whether is correct or wrong it will automatically move to the next one
+        setTimeout(() => {
+            handleNextMediumQuestion();
+        }, 2000);
 
     }
 
@@ -308,14 +297,12 @@ function selectMediumQuiz() {
     function showMediumScore() {
         resetMediumState();
         questionMediumElement.innerHTML = `You have scored ${score} out of ${mediumQuestions.length}!`;
-        nextQuestionButton.style.display = "none";
         backToIndexButton.style.display = "block";
         scoreDisplay.style.display = "none";
     }
 
 
-    function handleNextMediumQuestionButton() {
-        nextQuestionButton.style.display = "none";
+    function handleNextMediumQuestion() {
         currentQuestionIndex++;
         if (currentQuestionIndex < mediumQuestions.length) {
             showMediumQuestion();
@@ -323,15 +310,6 @@ function selectMediumQuiz() {
             showMediumScore();
         }
     }
-
-
-    nextMediumQuestionButton.addEventListener('click', () => {
-        if (currentQuestionIndex < mediumQuestions.length) {
-            handleNextMediumQuestionButton();
-        } else {
-            selectMediumQuiz();
-        }
-    });
 
 
 }
@@ -348,7 +326,6 @@ function selectHardQuiz() {
     questionContainerElement.classList.remove('hide');
     currentQuestionIndex = 0;
     score = 0;
-    nextHardQuestionButton.innerHTML = "Next";
     showHardQuestion();
 
     /**
@@ -420,8 +397,8 @@ function selectHardQuiz() {
 
         // Once answer is selected whether is correct or wrong it will automatically move to the next one
         setTimeout(() => {
-            handleNextHardQuestionButton();
-        }, 1200);
+            handleNextHardQuestion();
+        }, 2000);
 
     }
 
@@ -429,14 +406,12 @@ function selectHardQuiz() {
     function showHardScore() {
         resetHardState();
         questionHardElement.innerHTML = `You have scored ${score} out of ${hardQuestions.length}!`;
-        nextQuestionButton.style.display = "none";
         backToIndexButton.style.display = "block";
         scoreDisplay.style.display = "none";
     }
 
 
-    function handleNextHardQuestionButton() {
-        nextQuestionButton.style.display = "none";
+    function handleNextHardQuestion() {
         currentQuestionIndex++;
         if (currentQuestionIndex < hardQuestions.length) {
             showHardQuestion();
@@ -445,14 +420,6 @@ function selectHardQuiz() {
         }
     }
 
-
-    nextHardQuestionButton.addEventListener('click', () => {
-        if (currentQuestionIndex < hardQuestions.length) {
-            handleNextHardQuestionButton();
-        } else {
-            selectHardQuiz();
-        }
-    });
 
 }
 

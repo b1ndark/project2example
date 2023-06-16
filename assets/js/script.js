@@ -342,7 +342,7 @@ function selectHardQuiz() {
         let currentHardQuestion = hardQuestions[currentQuestionIndex];
         questionHardElement.innerHTML = currentHardQuestion.questionH;
         currentQuestionIndex++;
-        questionCounterText.innerHTML = `${currentQuestionIndex}/${hardQuestions.length.length}`;
+        questionCounterText.innerHTML = `${currentQuestionIndex}/${hardQuestions.length}`;
 
         /**
          *  This Function is to show answers of the current question

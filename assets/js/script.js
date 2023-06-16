@@ -166,11 +166,11 @@ function selectEasyQuiz() {
             console.log("correct-answer");
             selectedBtn.classList.add("correct-answer");
             score++;
-            addCorrectAnswersScore()
+            addCorrectAnswersScore();
         } else {
             console.log("wrong-answer");
             selectedBtn.classList.add("wrong-answer");
-            addIncorrectAnswersScore()
+            addIncorrectAnswersScore();
         }
         // Soon as the answer is selected where true or false, all the answers will be locked
         Array.from(answerButtons.children).forEach(button => {
@@ -285,11 +285,11 @@ function selectMediumQuiz() {
             console.log("correct-answer");
             selectedBtn.classList.add("correct-answer");
             score++;
-            addCorrectAnswersScore()
+            addCorrectAnswersScore();
         } else {
             console.log("wrong-answer");
             selectedBtn.classList.add("wrong-answer");
-            addIncorrectAnswersScore()
+            addIncorrectAnswersScore();
         }
         // Soon as the answer is selected where true or false, all the answers will be locked
         Array.from(answerButtons.children).forEach(button => {
@@ -403,11 +403,11 @@ function selectHardQuiz() {
             console.log("correct-answer");
             selectedBtn.classList.add("correct-answer");
             score++;
-            addCorrectAnswersScore()
+            addCorrectAnswersScore();
         } else {
             console.log("wrong-answer");
             selectedBtn.classList.add("wrong-answer");
-            addIncorrectAnswersScore()
+            addIncorrectAnswersScore();
         }
         // Soon as the answer is selected where true or false, all the answers will be locked
         Array.from(answerButtons.children).forEach(button => {
@@ -417,8 +417,11 @@ function selectHardQuiz() {
             button.disabled = true;
             console.log("answers blocked");
         });
-        // Once the answers are selected and locked, the Next button will be displayed
-        nextHardQuestionButton.style.display = "block";
+
+        // Once answer is selected whether is correct or wrong it will automatically move to the next one
+        setTimeout(() => {
+            handleNextHardQuestionButton();
+        }, 1200);
 
     }
 

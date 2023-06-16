@@ -73,10 +73,22 @@ const nextQuestionButton = document.getElementById("next-btn");
 const nextMediumQuestionButton = document.getElementById("next-btn");
 const nextHardQuestionButton = document.getElementById("next-btn");
 
+
 let currentQuestionIndex = 0;
 let score = 0;
 
+/**
+ * Global functions 
+ */
 
+/**
+ * This Function will get the current score
+ * and increase it by 1 as you progress and select correct answers
+ */
+function addCorrectScore() {
+    let oldCorrectScore = parseInt(document.getElementById("correct-score").innerText);
+    document.getElementById("correct-score").innerText = ++oldCorrectScore;
+}
 
 // This function will select Easy mode and start it 
 easyButton.addEventListener('click', selectEasyQuiz);
@@ -143,6 +155,7 @@ function selectEasyQuiz() {
             console.log("correct-answer");
             selectedBtn.classList.add("correct-answer");
             score++;
+            addCorrectScore()
         } else {
             console.log("wrong-answer");
             selectedBtn.classList.add("wrong-answer");
@@ -187,8 +200,9 @@ function selectEasyQuiz() {
             selectEasyQuiz();
         }
     });
-    
+
 }
+
 
 
 
@@ -249,15 +263,16 @@ function selectMediumQuiz() {
      * This function will activate as soon as the user selects an answer
      */
 
-    function selectMediumAnswer(eventM) {
+    function selectMediumAnswer(event) {
         console.log("selected answer");
-        const selectedBtn = eventM.target;
+        const selectedBtn = event.target;
         const isCorrect = selectedBtn.dataset.correct === "true";
         // Here the function will check if the answer is correct or not
         if (isCorrect) {
             console.log("correct-answer");
             selectedBtn.classList.add("correct-answer");
             score++;
+            addCorrectScore()
         } else {
             console.log("wrong-answer");
             selectedBtn.classList.add("wrong-answer");
@@ -364,15 +379,16 @@ function selectHardQuiz() {
      * This function will activate as soon as the user selects an answer
      */
 
-    function selectHardAnswer(eventH) {
+    function selectHardAnswer(event) {
         console.log("selected answer");
-        const selectedBtn = eventH.target;
+        const selectedBtn = event.target;
         const isCorrect = selectedBtn.dataset.correct === "true";
         // Here the function will check if the answer is correct or not
         if (isCorrect) {
             console.log("correct-answer");
             selectedBtn.classList.add("correct-answer");
             score++;
+            addCorrectScore()
         } else {
             console.log("wrong-answer");
             selectedBtn.classList.add("wrong-answer");

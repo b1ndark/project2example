@@ -86,10 +86,20 @@ let score = 0;
  * This Function will get the current score
  * and increase it by 1 as you progress and select correct answers
  */
-function addCorrectScore() {
-    let oldCorrectScore = parseInt(document.getElementById("correct-score").innerText);
-    document.getElementById("correct-score").innerText = ++oldCorrectScore;
+function addCorrectAnswersScore() {
+    let previousCorrectAnswersScore = parseInt(document.getElementById("correct-answers-score").innerText);
+    document.getElementById("correct-answers-score").innerText = ++previousCorrectAnswersScore;
 }
+
+/**
+ * This Function will get the current score
+ * and increase it by 1 as you progress and select incorrect answers
+ */
+function addIncorrectAnswersScore() {
+    let previousIncorrectAnswersScore = parseInt(document.getElementById("incorrect-answers-score").innerText);
+    document.getElementById("incorrect-answers-score").innerText = ++previousIncorrectAnswersScore;
+}
+
 
 // This function will select Easy mode and start it 
 easyButton.addEventListener('click', selectEasyQuiz);
@@ -156,10 +166,11 @@ function selectEasyQuiz() {
             console.log("correct-answer");
             selectedBtn.classList.add("correct-answer");
             score++;
-            addCorrectScore()
+            addCorrectAnswersScore()
         } else {
             console.log("wrong-answer");
             selectedBtn.classList.add("wrong-answer");
+            addIncorrectAnswersScore()
         }
         // Soon as the answer is selected where true or false, all the answers will be locked
         Array.from(answerButtons.children).forEach(button => {
@@ -274,10 +285,11 @@ function selectMediumQuiz() {
             console.log("correct-answer");
             selectedBtn.classList.add("correct-answer");
             score++;
-            addCorrectScore()
+            addCorrectAnswersScore()
         } else {
             console.log("wrong-answer");
             selectedBtn.classList.add("wrong-answer");
+            addIncorrectAnswersScore()
         }
         // Soon as the answer is selected where true or false, all the answers will be locked
         Array.from(answerButtons.children).forEach(button => {
@@ -391,10 +403,11 @@ function selectHardQuiz() {
             console.log("correct-answer");
             selectedBtn.classList.add("correct-answer");
             score++;
-            addCorrectScore()
+            addCorrectAnswersScore()
         } else {
             console.log("wrong-answer");
             selectedBtn.classList.add("wrong-answer");
+            addIncorrectAnswersScore()
         }
         // Soon as the answer is selected where true or false, all the answers will be locked
         Array.from(answerButtons.children).forEach(button => {

@@ -187,7 +187,6 @@ function selectEasyQuiz() {
 
 
     function handleNextQuestion() {
-
         if (currentQuestionIndex < easyQuestions.length) {
             showEasyQuestion();
         } else {
@@ -234,6 +233,8 @@ function selectMediumQuiz() {
          **/
         let currentMediumQuestion = mediumQuestions[currentQuestionIndex];
         questionMediumElement.innerHTML = currentMediumQuestion.questionM;
+        currentQuestionIndex++;
+        questionCounterText.innerHTML = `${currentQuestionIndex}/${easyQuestions.length}`;
 
         /**
          *  This Function is to show answers of the current question
@@ -270,7 +271,6 @@ function selectMediumQuiz() {
         } else {
             console.log("wrong-answer");
             selectedBtn.classList.add("wrong-answer");
-            addIncorrectAnswersScore();
         }
         // Soon as the answer is selected where true or false, all the answers will be locked
         Array.from(answerButtons.children).forEach(button => {
@@ -297,7 +297,6 @@ function selectMediumQuiz() {
 
 
     function handleNextMediumQuestion() {
-        currentQuestionIndex++;
         if (currentQuestionIndex < mediumQuestions.length) {
             showMediumQuestion();
         } else {
@@ -342,6 +341,8 @@ function selectHardQuiz() {
          **/
         let currentHardQuestion = hardQuestions[currentQuestionIndex];
         questionHardElement.innerHTML = currentHardQuestion.questionH;
+        currentQuestionIndex++;
+        questionCounterText.innerHTML = `${currentQuestionIndex}/${easyQuestions.length}`;
 
         /**
          *  This Function is to show answers of the current question
@@ -378,7 +379,6 @@ function selectHardQuiz() {
         } else {
             console.log("wrong-answer");
             selectedBtn.classList.add("wrong-answer");
-            addIncorrectAnswersScore();
         }
         // Soon as the answer is selected where true or false, all the answers will be locked
         Array.from(answerButtons.children).forEach(button => {
@@ -406,7 +406,6 @@ function selectHardQuiz() {
 
 
     function handleNextHardQuestion() {
-        currentQuestionIndex++;
         if (currentQuestionIndex < hardQuestions.length) {
             showHardQuestion();
         } else {

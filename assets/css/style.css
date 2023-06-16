@@ -75,18 +75,6 @@ h2 {
     justify-content: center;
 }
 
-#next-btn {
-    border: 0;
-    border-radius: 5px;
-    color: #fff;
-    background-color: #1d1d1d;
-    text-align: center;
-    padding: 2px 20px;
-    font-size: 1rem;
-    transition: all 0.2s;
-    margin: 10px auto;
-    display: none;
-}
 
 /* Container styling */
 
@@ -123,4 +111,20 @@ h2 {
 
 .wrong-answer {
     background: rgb(236, 32, 32);
+}
+
+/* hud */
+
+#score-area {
+    display: flex;
+    justify-content: space-between;
+}
+
+.hud-prefix {
+    text-align: center;
+    
+}
+
+.hud-main-text {
+    text-align: center;
 }

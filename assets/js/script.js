@@ -70,6 +70,8 @@ const answerButtons = document.getElementById("answer-buttons");
 const answerMediumButtons = document.getElementById("answer-buttons");
 const answerHardButtons = document.getElementById("answer-buttons");
 const scoreDisplay = document.getElementById("score-area");
+const questionCounterText = document.getElementById("question-counter");
+const scoreCounterText = document.getElementById("score-counter");
 
 
 let currentQuestionIndex = 0;
@@ -88,14 +90,6 @@ function addCorrectAnswersScore() {
     document.getElementById("correct-answers-score").innerText = ++previousCorrectAnswersScore;
 }
 
-/**
- * This Function will get the current score
- * and increase it by 1 as you progress and select incorrect answers
- */
-function addIncorrectAnswersScore() {
-    let previousIncorrectAnswersScore = parseInt(document.getElementById("incorrect-answers-score").innerText);
-    document.getElementById("incorrect-answers-score").innerText = ++previousIncorrectAnswersScore;
-}
 
 
 // This function will select Easy mode and start it 
@@ -130,7 +124,8 @@ function selectEasyQuiz() {
          **/
         let currentEasyQuestion = easyQuestions[currentQuestionIndex];
         questionElement.innerHTML = currentEasyQuestion.question;
-
+        currentQuestionIndex++;
+        questionCounterText.innerHTML = `${currentQuestionIndex}/${easyQuestions.length}`;
         /**
          *  This Function is to show answers of the current question
          *  It will add a button for each answer of the current question, in this case 4 answers
@@ -166,7 +161,6 @@ function selectEasyQuiz() {
         } else {
             console.log("wrong-answer");
             selectedBtn.classList.add("wrong-answer");
-            addIncorrectAnswersScore();
         }
         // Soon as the answer is selected where true or false, all the answers will be locked
         Array.from(answerButtons.children).forEach(button => {
@@ -193,7 +187,7 @@ function selectEasyQuiz() {
 
 
     function handleNextQuestion() {
-        currentQuestionIndex++;
+
         if (currentQuestionIndex < easyQuestions.length) {
             showEasyQuestion();
         } else {

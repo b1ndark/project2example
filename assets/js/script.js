@@ -72,6 +72,7 @@ const answerHardButtons = document.getElementById("answer-buttons");
 const nextQuestionButton = document.getElementById("next-btn");
 const nextMediumQuestionButton = document.getElementById("next-btn");
 const nextHardQuestionButton = document.getElementById("next-btn");
+const scoreDisplay = document.getElementById("score-area");
 
 
 let currentQuestionIndex = 0;
@@ -179,6 +180,7 @@ function selectEasyQuiz() {
         questionElement.innerHTML = `You have scored ${score} out of ${easyQuestions.length}!`;
         nextQuestionButton.style.display = "none";
         backToIndexButton.style.display = "block";
+        scoreDisplay.style.display = "none";
     }
 
 
@@ -296,6 +298,7 @@ function selectMediumQuiz() {
         questionMediumElement.innerHTML = `You have scored ${score} out of ${mediumQuestions.length}!`;
         nextQuestionButton.style.display = "none";
         backToIndexButton.style.display = "block";
+        scoreDisplay.style.display = "none";
     }
 
 
@@ -412,6 +415,7 @@ function selectHardQuiz() {
         questionHardElement.innerHTML = `You have scored ${score} out of ${hardQuestions.length}!`;
         nextQuestionButton.style.display = "none";
         backToIndexButton.style.display = "block";
+        scoreDisplay.style.display = "none";
     }
 
 

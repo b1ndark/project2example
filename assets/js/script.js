@@ -82,6 +82,9 @@ let score = 0;
  * Global functions 
  */
 
+
+
+
 /**
  * This Function will get the current score
  * and increase it by 1 as you progress and select correct answers
@@ -90,7 +93,6 @@ function addCorrectAnswersScore() {
     let previousCorrectAnswersScore = parseInt(document.getElementById("correct-answers-score").innerText);
     document.getElementById("correct-answers-score").innerText = ++previousCorrectAnswersScore;
 }
-
 
 
 // This function will select Easy mode and start it 
@@ -104,11 +106,12 @@ function selectEasyQuiz() {
     score = 0;
     showEasyQuestion();
 
+    
 
     /**
- * This function will reset the answer buttons from its questions
- * 
- */
+    * This function will reset the answer buttons from its questions
+    * 
+    */
     function resetEasyState() {
         while (answerButtons.firstChild) {
             answerButtons.removeChild(answerButtons.firstChild);
@@ -122,7 +125,8 @@ function selectEasyQuiz() {
         /**
          * This function will show current question
          * Data for for the questions will be collected from game.js file
-         **/ 
+         **/
+
         let currentEasyQuestion = easyQuestions[currentQuestionIndex];
         questionElement.innerHTML = currentEasyQuestion.question;
         currentQuestionIndex++;

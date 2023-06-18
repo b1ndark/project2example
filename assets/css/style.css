@@ -41,7 +41,7 @@ h2 {
 /* Button styling */
 
 .btn {
-    border: 0;
+    border: 2px solid #fff;
     border-radius: 5px;
     color: #fff;
     background-color: #1d1d1d;
@@ -59,8 +59,14 @@ h2 {
     color: #fff;
 }
 
+#back-index-btn a:hover {
+    color: #000000;
+}
+
 .btn:hover:not([disabled]) {
-    background-color: #464646;
+    background-color: #fff;
+    color: #000000;
+    border: 2px solid #000000;
 }
 
 .btn:disabled {

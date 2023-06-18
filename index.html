@@ -58,9 +58,12 @@
             <!-- Here is the Score area -->
             <div id="score-area">
                 <div class="score-item">
-                    <p class="hud-prefix">Question
-                    </p>
-                    <h4 class="hud-main-text" id="question-counter"></h4>
+                    <p>Question:</p>
+                    <div id="progress-question-bar">
+                        <div id="progress-question-bar-full">
+                            <p id="question-counter" class="hud-main-text hud-prefix question-counter"></p>
+                        </div>
+                    </div>
                 </div>
                 <div class="score-item">
                     <p class="hud-prefix">Score
@@ -74,8 +77,7 @@
             <div id="answer-buttons" class="btn-display">
 
             </div>
-            <button id="back-Index-btn" class="btn hide"><a href="index.html">Main Menu</a></button>
-
+            <button id="back-index-btn" class="btn hide"><a href="index.html">Main Menu</a></button>
         </div>
         <!-- Instructions container -->
         <div id="instructions-container" class="hide">

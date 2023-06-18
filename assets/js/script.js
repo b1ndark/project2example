@@ -8,7 +8,7 @@
 const startButton = document.getElementById("start-btn");
 const instructionsButton = document.getElementById("instructions-btn");
 const closeInstructionsButton = document.getElementById("close-instructions-btn");
-const backToIndexButton = document.getElementById("back-Index-btn");
+const backToIndexButton = document.getElementById("back-index-btn");
 
 // Difficulty Buttons
 const easyButton = document.getElementById("easy-btn");
@@ -72,6 +72,7 @@ const answerHardButtons = document.getElementById("answer-buttons");
 const scoreDisplay = document.getElementById("score-area");
 const questionCounterText = document.getElementById("question-counter");
 const scoreCounterText = document.getElementById("score-counter");
+const progressQuestionBarFull = document.getElementById("progress-question-bar-full");
 
 
 let currentQuestionIndex = 0;
@@ -121,11 +122,14 @@ function selectEasyQuiz() {
         /**
          * This function will show current question
          * Data for for the questions will be collected from game.js file
-         **/
+         **/ 
         let currentEasyQuestion = easyQuestions[currentQuestionIndex];
         questionElement.innerHTML = currentEasyQuestion.question;
         currentQuestionIndex++;
         questionCounterText.innerHTML = `${currentQuestionIndex}/${easyQuestions.length}`;
+
+        progressQuestionBarFull.style.width = `${(currentQuestionIndex / easyQuestions.length) * 100}%`;
+
         /**
          *  This Function is to show answers of the current question
          *  It will add a button for each answer of the current question, in this case 4 answers

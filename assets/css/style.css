@@ -51,11 +51,11 @@ h2 {
     transition: all 0.2s;
 }
 
-#back-Index-btn {
+#back-index-btn {
     margin: 20px auto;
 }
 
-#back-Index-btn a {
+#back-index-btn a {
     color: #fff;
 }
 
@@ -126,5 +126,27 @@ h2 {
 }
 
 .hud-main-text {
+    text-align: center;
+}
+
+#progress-question-bar {
+    width: 100px;
+    height: 15px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+}
+
+#progress-question-bar-full {
+    height: 100%;
+    background-color: #fff;
+    width: 0%;
+}
+
+.question-counter {
+    color: #000000;
+    margin: auto;
+}
+
+.score-item {
     text-align: center;
 }

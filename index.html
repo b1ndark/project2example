@@ -46,9 +46,9 @@
                 <h2>Choose the dificulty and let's play</h2>
             </div>
             <div class="btn-display">
-                <button type="button" id="easy-btn" class="btn easy-btn">Easy</button>
-                <button type="button" id="medium-btn" class="btn medium-btn">Medium</button>
-                <button type="button" id="hard-btn" class="btn hard-btn">Hard</button>
+                <button id="easy-btn" class="btn easy-btn" onclick="selectQuiz()">Easy</button>
+                <button id="medium-btn" class="btn medium-btn" onclick="selectQuiz()">Medium</button>
+                <button id="hard-btn" class="btn hard-btn" onclick="selectQuiz()">Hard</button>
             </div>
         </div>
         <!-- Questions container -->
@@ -71,9 +71,7 @@
                     <h4 id="score-counter" class="hud-main-text"><span id="correct-answers-score">0</span></h4>
                 </div>
             </div>
-            <div id="question">
-                <h2>Question</h2>
-            </div>
+            <h2 id="question"></h2>
             <div id="answer-buttons" class="btn-display">
 
             </div>

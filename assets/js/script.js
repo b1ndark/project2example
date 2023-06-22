@@ -1,8 +1,8 @@
 
 
 /**
- *  Access to containers
- */
+*  Access to containers
+*/
 
 // Buttons to access its containers
 const startButton = document.getElementById("start-btn");
@@ -10,13 +10,7 @@ const instructionsButton = document.getElementById("instructions-btn");
 const closeInstructionsButton = document.getElementById("close-instructions-btn");
 const backToIndexButton = document.getElementById("back-index-btn");
 
-// Difficulty Buttons
-const easyButton = document.getElementById("easy-btn");
-const mediumButton = document.getElementById("medium-btn");
-const hardButton = document.getElementById("hard-btn");
-
-
-// Containers
+// Containers 
 const startMenu = document.getElementById("menu-container");
 const difficultyContainerElement = document.getElementById("difficulty-container");
 const questionContainerElement = document.getElementById("question-container");
@@ -64,11 +58,7 @@ function selectDifficulty() {
  */
 
 const questionElement = document.getElementById("question");
-const questionMediumElement = document.getElementById("question");
-const questionHardElement = document.getElementById("question");
 const answerButtons = document.getElementById("answer-buttons");
-const answerMediumButtons = document.getElementById("answer-buttons");
-const answerHardButtons = document.getElementById("answer-buttons");
 const scoreDisplay = document.getElementById("score-area");
 const questionCounterText = document.getElementById("question-counter");
 const scoreCounterText = document.getElementById("score-counter");
@@ -82,9 +72,6 @@ let score = 0;
  * Global functions 
  */
 
-
-
-
 /**
  * This Function will get the current score
  * and increase it by 1 as you progress and select correct answers
@@ -94,333 +81,120 @@ function addCorrectAnswersScore() {
     document.getElementById("correct-answers-score").innerText = ++previousCorrectAnswersScore;
 }
 
+const easy = document.getElementById("easy-btn");
+const medium = document.getElementById("medium-btn");
+const hard = document.getElementById("hard-btn");
 
-// This function will select Easy mode and start it 
-easyButton.addEventListener('click', selectEasyQuiz);
+let currentQuestion = {};
 
-function selectEasyQuiz() {
-    console.log("easy");
+function selectQuiz() {
+    console.log("mode selected");
     difficultyContainerElement.classList.add('hide');
     questionContainerElement.classList.remove('hide');
     currentQuestionIndex = 0;
     score = 0;
-    showEasyQuestion();
-
-    
-
-    /**
-    * This function will reset the answer buttons from its questions
-    * 
-    */
-    function resetEasyState() {
-        while (answerButtons.firstChild) {
-            answerButtons.removeChild(answerButtons.firstChild);
-        }
+    showQuestion();
+}
+/**
+* This function will reset the answer buttons from its questions
+* 
+*/
+function resetState() {
+    while (answerButtons.firstChild) {
+        answerButtons.removeChild(answerButtons.firstChild);
     }
-
-    //Show questions and answers
-    function showEasyQuestion() {
-        resetEasyState();
-        console.log("show question");
-        /**
-         * This function will show current question
-         * Data for for the questions will be collected from game.js file
-         **/
-
-        let currentEasyQuestion = easyQuestions[currentQuestionIndex];
-        questionElement.innerHTML = currentEasyQuestion.question;
-        currentQuestionIndex++;
-        questionCounterText.innerHTML = `${currentQuestionIndex}/${easyQuestions.length}`;
-
-        progressQuestionBarFull.style.width = `${(currentQuestionIndex / easyQuestions.length) * 100}%`;
-
-        /**
-         *  This Function is to show answers of the current question
-         *  It will add a button for each answer of the current question, in this case 4 answers
-         *  Data for for the answers will be collected from game.js file
-         **/
-        currentEasyQuestion.answers.forEach(answer => {
-            console.log("answers displayed");
-            const answerButton = document.createElement("button");
-            answerButton.innerHTML = answer.text;
-            answerButton.classList.add("btn");
-            answerButtons.appendChild(answerButton);
-            if (answer.correct) {
-                answerButton.dataset.correct = answer.correct;
-            }
-            answerButton.addEventListener('click', selectEasyAnswer);
-        });
-    };
-
-    /**
-     * This function will activate as soon as the user selects an answer
-     */
-
-    function selectEasyAnswer(event) {
-        console.log("selected answer");
-        const selectedBtn = event.target;
-        const isCorrect = selectedBtn.dataset.correct === "true";
-        // Here the function will check if the answer is correct or not
-        if (isCorrect) {
-            console.log("correct-answer");
-            selectedBtn.classList.add("correct-answer");
-            score++;
-            addCorrectAnswersScore();
-        } else {
-            console.log("wrong-answer");
-            selectedBtn.classList.add("wrong-answer");
-        }
-        // Soon as the answer is selected where true or false, all the answers will be locked
-        Array.from(answerButtons.children).forEach(button => {
-            if (button.dataset.correct === "true") {
-                button.classList.add("correct-answer");
-            }
-            button.disabled = true;
-            console.log("answers blocked");
-        });
-        // Once answer is selected whether is correct or wrong it will automatically move to the next one
-        setTimeout(() => {
-            handleNextQuestion();
-        }, 2000);
-
-    }
-
-
-    function showScore() {
-        resetEasyState();
-        questionElement.innerHTML = `You have scored ${score} out of ${easyQuestions.length}!`;
-        backToIndexButton.style.display = "block";
-        scoreDisplay.style.display = "none";
-    }
-
-
-    function handleNextQuestion() {
-        if (currentQuestionIndex < easyQuestions.length) {
-            showEasyQuestion();
-        } else {
-            showScore();
-        }
-    }
-
-
 }
 
+//Show questions and answers
+function showQuestion(difficulty) {
+    resetState();
+    console.log("show question");
+    /**
+     * This function will show current question
+     * Data for for the questions will be collected from game.js file
+     **/
 
+    if (difficulty == easy) {
+        currentQuestion = easyQuestions[currentQuestionIndex];
+        console.log("easy questions");
+    } else if (difficulty == medium) {
+        currentQuestion = mediumQuestions[currentQuestionIndex];
+        console.log("medium questions");
+    } else {
+        currentQuestion = hardQuestions[currentQuestionIndex];
+        console.log("hard questions");
+    }
+    questionElement.innerHTML = currentQuestion.question;
 
+    // This will workout what question you are on and display it
+    currentQuestionIndex++;
+    questionCounterText.innerHTML = `${currentQuestionIndex}/4`;
 
-// This function will select Medium mode
-
-mediumButton.addEventListener('click', selectMediumQuiz);
-
-function selectMediumQuiz() {
-    console.log("medium");
-    difficultyContainerElement.classList.add('hide');
-    questionContainerElement.classList.remove('hide');
-    currentQuestionIndex = 0;
-    score = 0;
-    showMediumQuestion();
-
+    // This will display a progression bar
+    progressQuestionBarFull.style.width = `${(currentQuestionIndex / 4) * 100}%`;
 
     /**
-    * This function will reset the answer buttons from its questions
-    * 
-    */
-    function resetMediumState() {
-        while (answerMediumButtons.firstChild) {
-            answerMediumButtons.removeChild(answerMediumButtons.firstChild);
+     *  This Function is to show answers of the current question
+     *  It will add a button for each answer of the current question, in this case 4 answers
+     *  Data for for the answers will be collected from game.js file
+     **/
+
+    currentQuestion.answers.forEach(answer => {
+        console.log("answers displayed");
+        const answerButton = document.createElement("button");
+        answerButton.innerHTML = answer.text;
+        answerButton.classList.add("btn");
+        answerButtons.appendChild(answerButton);
+        if (answer.correct) {
+            answerButton.dataset.correct = answer.correct;
         }
-    }
-
-    //Show questions and answers
-    function showMediumQuestion() {
-        resetMediumState();
-        console.log("show question");
-        /**
-         * This function will show current question
-         * Data for the questions will be collected from game.js file
-         **/
-        let currentMediumQuestion = mediumQuestions[currentQuestionIndex];
-        questionMediumElement.innerHTML = currentMediumQuestion.questionM;
-        currentQuestionIndex++;
-        questionCounterText.innerHTML = `${currentQuestionIndex}/${mediumQuestions.length}`;
-
-        /**
-         *  This Function is to show answers of the current question
-         *  It will add a button for each answer of the current question, in this case 4 answers
-         *  Data for the answers will be collected from game.js file
-         **/
-        currentMediumQuestion.answers.forEach(answer => {
-            console.log("answers displayed");
-            const answerMediumButton = document.createElement("button");
-            answerMediumButton.innerHTML = answer.text;
-            answerMediumButton.classList.add("btn");
-            answerMediumButtons.appendChild(answerMediumButton);
-            if (answer.correct) {
-                answerMediumButton.dataset.correct = answer.correct;
-            }
-            answerMediumButton.addEventListener('click', selectMediumAnswer);
-        });
-    };
-
-    /**
-     * This function will activate as soon as the user selects an answer
-     */
-
-    function selectMediumAnswer(event) {
-        console.log("selected answer");
-        const selectedBtn = event.target;
-        const isCorrect = selectedBtn.dataset.correct === "true";
-        // Here the function will check if the answer is correct or not
-        if (isCorrect) {
-            console.log("correct-answer");
-            selectedBtn.classList.add("correct-answer");
-            score++;
-            addCorrectAnswersScore();
-        } else {
-            console.log("wrong-answer");
-            selectedBtn.classList.add("wrong-answer");
-        }
-        // Soon as the answer is selected where true or false, all the answers will be locked
-        Array.from(answerButtons.children).forEach(button => {
-            if (button.dataset.correct === "true") {
-                button.classList.add("correct-answer");
-            }
-            button.disabled = true;
-            console.log("answers blocked");
-        });
-        // Once answer is selected whether is correct or wrong it will automatically move to the next one
-        setTimeout(() => {
-            handleNextMediumQuestion();
-        }, 2000);
-
-    }
-
-
-    function showMediumScore() {
-        resetMediumState();
-        questionMediumElement.innerHTML = `You have scored ${score} out of ${mediumQuestions.length}!`;
-        backToIndexButton.style.display = "block";
-        scoreDisplay.style.display = "none";
-    }
-
-
-    function handleNextMediumQuestion() {
-        if (currentQuestionIndex < mediumQuestions.length) {
-            showMediumQuestion();
-        } else {
-            showMediumScore();
-        }
-    }
-
-
+        answerButton.addEventListener('click', selectAnswer);
+    });
 }
 
+/**
+ * This function will activate as soon as the user selects an answer
+ */
 
-
-// This function will select Hard mode
-
-hardButton.addEventListener('click', selectHardQuiz);
-
-function selectHardQuiz() {
-    console.log("hard");
-    difficultyContainerElement.classList.add('hide');
-    questionContainerElement.classList.remove('hide');
-    currentQuestionIndex = 0;
-    score = 0;
-    showHardQuestion();
-
-    /**
-    * This function will reset the answer buttons from its questions
-    * 
-    */
-    function resetHardState() {
-        while (answerHardButtons.firstChild) {
-            answerHardButtons.removeChild(answerHardButtons.firstChild);
+function selectAnswer(event) {
+    console.log("selected answer");
+    const selectedBtn = event.target;
+    const isCorrect = selectedBtn.dataset.correct === "true";
+    // Here the function will check if the answer is correct or not
+    if (isCorrect) {
+        console.log("correct-answer");
+        selectedBtn.classList.add("correct-answer");
+        score++;
+        addCorrectAnswersScore();
+    } else {
+        console.log("wrong-answer");
+        selectedBtn.classList.add("wrong-answer");
+    }
+    // Soon as the answer is selected where true or false, all the answers will be locked
+    Array.from(answerButtons.children).forEach(button => {
+        if (button.dataset.correct === "true") {
+            button.classList.add("correct-answer");
         }
-    }
-
-    //Show questions and answers
-    function showHardQuestion() {
-        resetHardState();
-        console.log("show question");
-        /**
-         * This function will show current question
-         * Data for the questions will be collected from game.js file
-         **/
-        let currentHardQuestion = hardQuestions[currentQuestionIndex];
-        questionHardElement.innerHTML = currentHardQuestion.questionH;
-        currentQuestionIndex++;
-        questionCounterText.innerHTML = `${currentQuestionIndex}/${hardQuestions.length}`;
-
-        /**
-         *  This Function is to show answers of the current question
-         *  It will add a button for each answer of the current question, in this case 4 answers
-         *  Data for the answers will be collected from game.js file
-         **/
-        currentHardQuestion.answers.forEach(answer => {
-            console.log("answers displayed");
-            const answerHardButton = document.createElement("button");
-            answerHardButton.innerHTML = answer.text;
-            answerHardButton.classList.add("btn");
-            answerHardButtons.appendChild(answerHardButton);
-            if (answer.correct) {
-                answerHardButton.dataset.correct = answer.correct;
-            }
-            answerHardButton.addEventListener('click', selectHardAnswer);
-        });
-    };
-
-    /**
-     * This function will activate as soon as the user selects an answer
-     */
-
-    function selectHardAnswer(event) {
-        console.log("selected answer");
-        const selectedBtn = event.target;
-        const isCorrect = selectedBtn.dataset.correct === "true";
-        // Here the function will check if the answer is correct or not
-        if (isCorrect) {
-            console.log("correct-answer");
-            selectedBtn.classList.add("correct-answer");
-            score++;
-            addCorrectAnswersScore();
-        } else {
-            console.log("wrong-answer");
-            selectedBtn.classList.add("wrong-answer");
-        }
-        // Soon as the answer is selected where true or false, all the answers will be locked
-        Array.from(answerButtons.children).forEach(button => {
-            if (button.dataset.correct === "true") {
-                button.classList.add("correct-answer");
-            }
-            button.disabled = true;
-            console.log("answers blocked");
-        });
-
-        // Once answer is selected whether is correct or wrong it will automatically move to the next one
-        setTimeout(() => {
-            handleNextHardQuestion();
-        }, 2000);
-
-    }
-
-
-    function showHardScore() {
-        resetHardState();
-        questionHardElement.innerHTML = `You have scored ${score} out of ${hardQuestions.length}!`;
-        backToIndexButton.style.display = "block";
-        scoreDisplay.style.display = "none";
-    }
-
-
-    function handleNextHardQuestion() {
-        if (currentQuestionIndex < hardQuestions.length) {
-            showHardQuestion();
-        } else {
-            showHardScore();
-        }
-    }
-
-
+        button.disabled = true;
+        console.log("answers blocked");
+    });
+    // Once answer is selected whether is correct or wrong it will automatically move to the next one
+    setTimeout(() => {
+        handleNextQuestion();
+    }, 2000);
 }
 
+function showScore() {
+    resetState();
+    questionElement.innerHTML = `You have scored ${score} out of ${4}!`;
+    backToIndexButton.style.display = "block";
+    scoreDisplay.style.display = "none";
+}
+
+function handleNextQuestion() {
+    if (currentQuestionIndex < 4) {
+        showQuestion();
+    } else {
+        showScore();
+    };
+}

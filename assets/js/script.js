@@ -249,3 +249,7 @@ function handleNextQuestion() {
 };
 
 
+function usernameSubmit() {
+    let username = document.getElementById("username");
+    
+}

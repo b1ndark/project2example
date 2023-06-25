@@ -41,6 +41,7 @@ h2 {
 /* Button styling */
 
 .btn {
+    font-family: 'Montserrat', sans-serif;
     border: 2px solid #fff;
     border-radius: 5px;
     color: #fff;
@@ -128,7 +129,7 @@ h2 {
 
 .hud-prefix {
     text-align: center;
-    
+
 }
 
 .hud-main-text {
@@ -155,4 +156,23 @@ h2 {
 
 .score-item {
     text-align: center;
+}
+
+.username-label {
+    color: #000000;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+.form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.text-input {
+    height: 20px;
+    padding: 2px 20px;
 }

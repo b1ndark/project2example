@@ -52,15 +52,15 @@ h2 {
     transition: all 0.2s;
 }
 
-#back-index-btn {
+#back-to-index-btn {
     margin: 20px auto;
 }
 
-#back-index-btn a {
+#back-to-index-btn a {
     color: #fff;
 }
 
-#back-index-btn a:hover {
+#back-to-index-btn a:hover {
     color: #000000;
 }
 

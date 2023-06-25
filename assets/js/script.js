@@ -7,6 +7,7 @@ const instructionsButton = document.getElementById("instructions-btn");
 const closeInstructionsButton = document.getElementById("close-instructions-btn");
 const backToIndexButton = document.getElementById("back-to-index-btn");
 const backToDifficultyMenu = document.getElementById("back-to-difficulty-menu");
+const difficultyBackToMainMenu = document.getElementById("difficultyBackToMainMenu");
 
 const questionElement = document.getElementById("question");
 const answerButtons = document.getElementById("answer-buttons");
@@ -251,5 +252,5 @@ function handleNextQuestion() {
 
 function usernameSubmit() {
     let username = document.getElementById("username");
-    
+
 }

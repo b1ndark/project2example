@@ -23,84 +23,101 @@
 
 <body>
     <!-- Title -->
-    <div><a href="index.html">
-            <h1>The Quiz</h1>
+    <div>
+        <a href="index.html">
+            <h1 class="index-page-title">The History Quiz</h1>
         </a>
     </div>
-    <!-- Quiz section -->
+
+    <!-- Containers -->
     <div class="container">
-        <!-- Main menu container -->
+
+        <!-- Main Menu Container -->
         <div id="menu-container">
             <div>
                 <h2>Welcome and Enjoy the Quiz!</h2>
             </div>
-            <div id="start-menu" class="btn-display">
-                <button id="start-btn" class="btn start-btn">Start</button>
-                <button id="instructions-btn" class="btn instructions">Instructions</button>
-                <button id="score-board-btn" class="btn score-board">Score board</button>
+            <div id="start-menu" class="btn-display-normal">
+                <button id="start-btn" class="btn-other btn start-btn">Start</button>
+                <button id="instructions-btn" class="btn-other btn instructions">Instructions</button>
+                <button id="score-board-btn" class="btn-other btn score-board">Score board</button>
             </div>
         </div>
-        <!-- Difficulty container -->
+
+        <!-- Difficulty Menu Container -->
         <div id="difficulty-container" class="hide">
             <div>
-                <h2>Choose the dificulty and let's play</h2>
+                <h2>Choose the difficulty and let's play</h2>
             </div>
-            <div class="btn-display">
-                <button id="easy-btn" class="btn easy-btn" onclick="selectQuiz()">Easy</button>
-                <button id="medium-btn" class="btn medium-btn" onclick="selectQuiz()">Medium</button>
-                <button id="hard-btn" class="btn hard-btn" onclick="selectQuiz()">Hard</button>
+            <div class="btn-display-normal">
+                <button id="easy-btn" class="btn-other btn easy-btn" onclick="selectQuiz(easy)">Easy</button>
+                <button id="medium-btn" class="btn-other btn medium-btn" onclick="selectQuiz(medium)">Medium</button>
+                <button id="hard-btn" class="btn-other btn hard-btn" onclick="selectQuiz(hard)">Hard</button>
             </div>
         </div>
-        <!-- Questions container -->
 
+        <!-- Questions Container -->
         <div id="question-container" class="hide">
-
-            <!-- Here is the Score area -->
             <div id="score-area">
-                <div class="score-item">
-                    <p>Question:</p>
-                    <div id="progress-question-bar">
-                        <div id="progress-question-bar-full">
-                            <p id="question-counter" class="hud-main-text hud-prefix question-counter"></p>
+
+                <!-- Question counter -->
+                <div class="score-item-content">
+                    <p class="main-text">
+                        Question:
+                    </p>
+
+                    <!-- Progression bar -->
+                    <div id="progress-questions-bar">
+                        <div id="fill-up-progress-question-bar">
+                            <p id="answered-question-counter" class="question-counter main-counter-text"></p>
                         </div>
                     </div>
                 </div>
-                <div class="score-item">
-                    <p class="hud-prefix">Score
+
+                <!-- Score counter -->
+                <div class="score-item-content">
+                    <p class="main-text">
+                        Score
                     </p>
-                    <h4 id="score-counter" class="hud-main-text"><span id="correct-answers-score">0</span></h4>
+                    <h4 class="main-counter-text">
+                        <span id="correct-answers-score">
+                            0
+                        </span>
+                    </h4>
                 </div>
             </div>
-            <h2 id="question"></h2>
+
+            <!-- Here is where questions will appear from game.js file -->
+            <div id="question">
+                <h2>Question</h2>
+            </div>
             <div id="answer-buttons" class="btn-display">
 
+                <!-- Answer buttons will be created with JavaScript with its respective answers for the question -->
             </div>
-            <button id="back-index-btn" class="btn hide"><a href="index.html">Main Menu</a></button>
+            <button id="back-to-difficulty-menu" class="btn-back btn">Back</button>
+            <a href="index.html" id="back-to-index-btn" class="btn-other btn hide">Main Menu</a>
         </div>
+
         <!-- Instructions container -->
         <div id="instructions-container" class="hide">
             <div>
-                <h2>Quiz Instructions</h2>
+                <h2>History Quiz Instructions!</h2>
                 <br>
-                <p>First select Start</p>
-                <p>Once the difficulty menu shows you will be able to select the difficulty mode</p>
-                <p>After selecting the difficulty mode, you will be taken to the quiz</p>
-                <p>where you will have four opttions for each question</p>
-                <p>The goal will be to get the highest score possible so you can be on the top of the score board!</p>
-                <p>Have fun and enjoy the quiz :)</p>
+                <ol>
+                    <li>First press Start</li>
+                    <li>Once the difficulty menu shows you will be able to select the difficulty mode</li>
+                    <li>After selecting the difficulty mode, you will be taken to the quiz</li>
+                    <li>Where you will have four answer options for each question</li>
+                    <li>Once the Answer is selected it will take you to the next question in 2 seconds</li>
+                    <li>Each mode has 10 questions</li>
+                    <li>The goal will be to get the highest score possible so you can be on the top of the score board!
+                    </li>
+                    <li>Have fun and enjoy the quiz :)</li>
+                </ol>
             </div>
             <div id="instructions-menu" class="btn-display">
                 <button id="close-instructions-btn" class="btn instructions">Close</button>
-            </div>
-        </div>
-        <!-- Score Board container -->
-        <div id="score-container" class="hide">
-            <div>
-                <h2>Top Score Board</h2>
-            </div>
-            <div id="score-menu" class="btn-display btn-flex">
-                <button id="start-btn" class="btn start-btn">Let's Start again</button>
-                <button id="main-menu" class="btn how-to-play">Main Menu</button>
             </div>
         </div>
     </div>

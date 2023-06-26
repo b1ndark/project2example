@@ -29,6 +29,7 @@ const startMenu = document.getElementById("menu-container");
 const difficultyContainerElement = document.getElementById("difficulty-container");
 const instructionsContainerElement = document.getElementById("instructions-container");
 const questionContainerElement = document.getElementById("question-container");
+const usernameContainerElement = document.getElementById("username-container");
 
 /**
 * Instructions container

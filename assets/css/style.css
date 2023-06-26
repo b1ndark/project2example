@@ -177,6 +177,8 @@ h2 {
     height: 20px;
     padding: 2px 20px;
     width: 100px;
+    border-radius: 5px;
+    text-align: center;
 }
 
 .submitButton {

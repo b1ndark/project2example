@@ -170,9 +170,15 @@ h2 {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    align-items: center;
 }
 
 .text-input {
     height: 20px;
     padding: 2px 20px;
+    width: 100px;
+}
+
+.submitButton {
+    padding: 2px 40px;
 }

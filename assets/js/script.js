@@ -222,7 +222,7 @@ function selectAnswer(event) {
 */
 function showScore() {
     resetState();
-    questionElement.innerHTML = `Well done in completing the quiz!` +
+    questionElement.innerHTML = `Well done ${username} in completing the quiz!` +
         `<br> You have answered ${score} correct out of ${4} questions!`;
 
     // This will display Main Menu button
@@ -250,7 +250,10 @@ function handleNextQuestion() {
 };
 
 
-function usernameSubmit() {
-    let username = document.getElementById("username");
+const submitButton = document.getElementById("submit-btn");
 
+function usernameSubmit() {
+    let inputUsername = document.getElementById("usernameInput").value;
+    alert(inputUsername)
+    
 }

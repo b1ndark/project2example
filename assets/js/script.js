@@ -222,7 +222,7 @@ function selectAnswer(event) {
 */
 function showScore() {
     resetState();
-    questionElement.innerHTML = `Well done ${username} in completing the quiz!` +
+    questionElement.innerHTML = `Well done in completing the quiz!` +
         `<br> You have answered ${score} correct out of ${4} questions!`;
 
     // This will display Main Menu button
@@ -249,11 +249,13 @@ function handleNextQuestion() {
     }
 };
 
-
+const formContainer = document.getElementById("form-display");
 const submitButton = document.getElementById("submit-btn");
 
 function usernameSubmit() {
     let inputUsername = document.getElementById("usernameInput").value;
-    alert(inputUsername)
-    
+    let messageUsername = document.getElementById("message-username");
+    formContainer.style.display = 'none';
+
+    messageUsername.innerHTML = " " + inputUsername;
 }

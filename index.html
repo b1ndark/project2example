@@ -35,20 +35,21 @@
         <!-- Main Menu Container -->
         <div id="menu-container">
             <div>
-                <h2>Welcome and Enjoy the Quiz!</h2>
+                <h2>Welcome and Enjoy the Quiz<span id="message-username"></span>!</h2>
             </div>
             <div id="start-menu" class="btn-display-normal btn-display">
                 <button id="start-btn" class="btn-other btn start-btn">Start</button>
                 <button id="instructions-btn" class="btn-other btn instructions">Instructions</button>
                 <button id="scoreboard-btn" class="btn-other btn scoreboard">Scoreboard</button>
             </div>
-            <div id="form">
-                <form action="" class="form">
-                    <label for="username" class="username-label">Username:</label>
-                    <input type="text" id="usernameInput" name="text-input" class="text-input usernameInput" required
-                        placeholder="Username here">
-                    <button id="submit-btn" class="btn-other btn submitButton" onclick="usernameSubmit()">Submit</button>
-                </form>
+            <div id="form-display" class="form">
+                <label for="username" class="username-label">Username:</label>
+                <input type="text" id="usernameInput" name="text-input" class="text-input usernameInput" required
+                    placeholder="Username here">
+                <button id="submit-btn" class="btn-other btn submitButton" onclick="usernameSubmit()">Submit</button>
+            </div>
+            <div>
+                <h3 ></h3>
             </div>
         </div>
 

@@ -252,6 +252,12 @@ function handleNextQuestion() {
 
 const formContainer = document.getElementById("form-display");
 const submitButton = document.getElementById("submit-btn");
+const usernameInput = document.getElementById("usernameInput");
+
+usernameInput.addEventListener('keyup', () => {
+    submitButton.disabled = !usernameInput.value;
+});
+
 
 function usernameSubmit() {
     let inputUsername = document.getElementById("usernameInput").value;

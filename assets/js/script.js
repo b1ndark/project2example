@@ -122,6 +122,7 @@ function resetState() {
     }
 }
 
+maxQuestions = 4;
 
 /**
 * This function will show questions and its answers
@@ -130,20 +131,21 @@ function resetState() {
 function showQuestion() {
     resetState();
     console.log("show question");
-
+    const currentQuestionIndexx = Math.floor(Math.random() * 4);
     /**
     * This function will show current question
     * Data for the questions will be collected from game.js file
     * It will pick the questions from the mode you have choosen
     */
+    
     if (difficulty == easy) {
-        currentQuestion = easyQuestions[currentQuestionIndex];
+        currentQuestion = easyQuestions[currentQuestionIndexx];
         console.log("easy questions");
     } else if (difficulty == medium) {
-        currentQuestion = mediumQuestions[currentQuestionIndex];
+        currentQuestion = mediumQuestions[currentQuestionIndexx];
         console.log("medium questions");
     } else {
-        currentQuestion = hardQuestions[currentQuestionIndex];
+        currentQuestion = hardQuestions[currentQuestionIndexx];
         console.log("hard questions");
     }
     questionElement.innerHTML = currentQuestion.question;
@@ -153,7 +155,7 @@ function showQuestion() {
     answeredQuestionsCounter.innerHTML = `${currentQuestionIndex}/4`;
 
     // This will display a progression bar
-    progressAnsweredQuestionBarFull.style.width = `${(currentQuestionIndex / 4) * 100}%`;
+    progressAnsweredQuestionBarFull.style.width = `${(currentQuestionIndex / maxQuestions) * 100}%`;
 
 
     /**
@@ -174,6 +176,7 @@ function showQuestion() {
         // This Event Listener is to select an answer
         answerButton.addEventListener('click', selectAnswer);
     });
+    
 }
 
 
@@ -224,7 +227,7 @@ function showScore() {
     resetState();
     let username = localStorage.getItem('userName');
     questionElement.innerHTML = `Well done ${username} in completing the quiz!` +
-        `<br> You have answered ${score} correct out of ${4} questions!`;
+        `<br> You have answered ${score} correct out of ${maxQuestions} questions!`;
 
     // This will display Main Menu button
     backToIndexButton.style.display = 'block';
@@ -242,7 +245,7 @@ function showScore() {
 * Next question Data will be loaded from game.js file
 */
 function handleNextQuestion() {
-    if (currentQuestionIndex < 4) {
+    if (currentQuestionIndex < maxQuestions) {
         showQuestion();
         console.log("next question shown");
     } else {
@@ -258,6 +261,9 @@ usernameInput.addEventListener('keyup', () => {
     submitButton.disabled = !usernameInput.value;
 });
 
+submitButton.addEventListener('mousedown', () => {
+    startButton.disabled = !submitButton == 'none';
+})
 
 function usernameSubmit() {
     let inputUsername = document.getElementById("usernameInput").value;

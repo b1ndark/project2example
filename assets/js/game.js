@@ -41,7 +41,7 @@ const easyQuestions = [
 
 const mediumQuestions = [
     {
-        questionM: 'Where did the Industrial Revolution started?',
+        question: 'Where did the Industrial Revolution started?',
         answers: [
             { text: 'Sweden', correct: false },
             { text: 'Italy', correct: false },
@@ -50,7 +50,7 @@ const mediumQuestions = [
         ]
     },
     {
-        questionM: 'What year did the Industrial Revolution started?',
+        question: 'What year did the Industrial Revolution started?',
         answers: [
             { text: '1850', correct: false },
             { text: '1998', correct: false },
@@ -59,7 +59,7 @@ const mediumQuestions = [
         ]
     },
     {
-        questionM: 'Where did the Carnation Revolution happened?',
+        question: 'Where did the Carnation Revolution happened?',
         answers: [
             { text: 'Portugal', correct: true },
             { text: 'Australia', correct: false },
@@ -68,7 +68,7 @@ const mediumQuestions = [
         ]
     },
     {
-        questionM: 'What counrties were part of Axis group in WW2?',
+        question: 'What counrties were part of Axis group in WW2?',
         answers: [
             { text: 'Spain, Greece and Sweden', correct: false },
             { text: 'Germany, Italy, and Japan', correct: true },
@@ -80,7 +80,7 @@ const mediumQuestions = [
 
 const hardQuestions = [
     {
-        questionH: 'When did happen the American civil war?',
+        question: 'When did happen the American civil war?',
         answers: [
             { text: 'between 1 Jan 1250 and 31 Dec 1900', correct: false },
             { text: 'between 31 Feb 2100 and 25 Apr 2135', correct: false },
@@ -89,7 +89,7 @@ const hardQuestions = [
         ]
     },
     {
-        questionH: 'Which Roman emperor built the Colosseum?',
+        question: 'Which Roman emperor built the Colosseum?',
         answers: [
             { text: 'emperor Magnus Maximus', correct: false },
             { text: 'emperor Constantine II', correct: false },
@@ -98,7 +98,7 @@ const hardQuestions = [
         ]
     },
     {
-        questionH: 'In Japan where did the USA detonated the two nuclear bombs during the WW2?',
+        question: 'In Japan where did the USA detonated the two nuclear bombs during the WW2?',
         answers: [
             { text: 'Hiroshima and Nagasaki', correct: true },
             { text: 'Osaka and Tokyo', correct: false },
@@ -107,7 +107,7 @@ const hardQuestions = [
         ]
     },
     {
-        questionH: 'What was the longest Empire in history?',
+        question: 'What was the longest Empire in history?',
         answers: [
             { text: 'Kush Empire', correct: false },
             { text: 'Roman Empire', correct: true },

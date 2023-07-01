@@ -227,9 +227,12 @@ function selectAnswer(event) {
 */
 function showScore() {
     resetState();
-    let username = localStorage.getItem('userName');
+    let username = localStorage.getItem('username');
     questionElement.innerHTML = `Well done ${username} in completing the quiz!` +
         `<br> You have answered ${score} correct out of ${maxQuestions} questions!`;
+
+    let endScore = document.getElementById('correct-answers-score').innerHTML;
+    localStorage.setItem('correct-answers-score', endScore);
 
     // This will display Main Menu button
     backToIndexButton.style.display = 'block';
@@ -239,6 +242,7 @@ function showScore() {
 
     // This will Hide the back button
     backToDifficultyMenu.style.display = 'none';
+    
 }
 
 
@@ -253,6 +257,8 @@ function handleNextQuestion() {
     } else {
         showScore();
     }
+    //save the score in to localstorage
+    localStorage.setItem('score', score);
 };
 
 const formContainer = document.getElementById("form-display");
@@ -271,11 +277,31 @@ function usernameSubmit() {
     let inputUsername = document.getElementById("usernameInput").value;
     let messageUsername = document.getElementById("message-username");
     formContainer.style.display = 'none';
-    localStorage.setItem('userName', inputUsername);
+    localStorage.setItem('username', inputUsername);
     messageUsername.innerHTML = " " + inputUsername;
 }
 
 function selectScoreboard() {
     startMenu.classList.add('hide');
     scoreboardContainerElement.classList.remove('hide');
+    showScoreboard();
+}
+
+function showScoreboard() {
+    let showScoreList = document.getElementById("scoreboard-list");
+    const username = localStorage.getItem('username');
+    const endScore = localStorage.getItem('correct-answers-score');
+    const scoreboard = JSON.parse(localStorage.getItem('highScores')) || [];
+    let score = {
+        score: endScore,
+        username: `${username}`
+    };
+    
+    scoreboard.push(score);
+    showScoreList.innerHTML = scoreboard
+        .map(score => {
+            return `<li class="score-list">${score.username} - ${score.score}</li>`;
+        })
+        .join("");
+    
 }

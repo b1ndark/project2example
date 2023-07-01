@@ -191,3 +191,12 @@ ol {
     padding: 2px 40px;
 }
 
+/* Scoreboard */
+
+.score-list {
+    padding: 15px;
+    text-align: center;
+    list-style-type: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+}

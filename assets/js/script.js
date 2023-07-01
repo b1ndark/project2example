@@ -29,6 +29,7 @@ const startMenu = document.getElementById("menu-container");
 const difficultyContainerElement = document.getElementById("difficulty-container");
 const instructionsContainerElement = document.getElementById("instructions-container");
 const questionContainerElement = document.getElementById("question-container");
+const scoreboardContainerElement = document.getElementById("scoreboard-container");
 
 /**
 * Instructions container
@@ -55,6 +56,7 @@ function selectMainMenu() {
     console.log("close instructions");
     instructionsContainerElement.classList.add('hide');
     startMenu.classList.remove('hide');
+    scoreboardContainerElement.classList.add('hide');
     console.log('back to Main Menu');
 }
 
@@ -271,4 +273,9 @@ function usernameSubmit() {
     formContainer.style.display = 'none';
     localStorage.setItem('userName', inputUsername);
     messageUsername.innerHTML = " " + inputUsername;
+}
+
+function selectScoreboard() {
+    startMenu.classList.add('hide');
+    scoreboardContainerElement.classList.remove('hide');
 }

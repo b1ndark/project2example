@@ -106,9 +106,15 @@ h2 {
 /* Instructions container */
 
 #instructions-container {
-    text-align: center;
     font-size: 1.2rem;
+    padding: 15px;
 }
+
+ol {
+    margin-top: 2rem;
+    margin-left: 0;
+}
+
 
 /* answers */
 

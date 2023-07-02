@@ -40,7 +40,6 @@ instructionsButton.addEventListener('click', selectInstructions);
 
 // This function will open the Instructions container
 function selectInstructions() {
-    console.log("open instructions");
     startMenu.classList.add('hide');
     instructionsContainerElement.classList.remove('hide');
 }
@@ -53,11 +52,9 @@ closeInstructionsButton.addEventListener('click', selectMainMenu);
 
 // This function will close the Instructions container
 function selectMainMenu() {
-    console.log("close instructions");
     instructionsContainerElement.classList.add('hide');
     startMenu.classList.remove('hide');
     scoreboardContainerElement.classList.add('hide');
-    console.log('back to Main Menu');
 }
 
 
@@ -69,10 +66,8 @@ startButton.addEventListener('click', selectDifficulty);
 
 // Function to close Start Menu and open Difficulty Menu
 function selectDifficulty() {
-    console.log('difficulty menu');
     startMenu.classList.add('hide');
     difficultyContainerElement.classList.remove('hide');
-    console.log('closed main menu');
     questionContainerElement.classList.add('hide');
 }
 
@@ -104,7 +99,6 @@ const hard = document.getElementById("hard-btn");
 */
 
 function selectQuiz(selectedDifficulty) {
-    console.log('you have selected  mode');
     difficultyContainerElement.classList.add('hide');
     questionContainerElement.classList.remove('hide');
     currentQuestionIndex = 0;
@@ -120,7 +114,6 @@ function selectQuiz(selectedDifficulty) {
 function resetState() {
     while (answerButtons.firstChild) {
         answerButtons.removeChild(answerButtons.firstChild);
-        console.log("previous answers cleared");
     }
 }
 
@@ -132,23 +125,19 @@ maxQuestions = 4;
 
 function showQuestion() {
     resetState();
-    console.log("show question");
     const currentQuestionIndexx = Math.floor(Math.random() * 4);
     /**
     * This function will show current question
     * Data for the questions will be collected from game.js file
     * It will pick the questions from the mode you have choosen
     */
-    
+
     if (difficulty == easy) {
         currentQuestion = easyQuestions[currentQuestionIndexx];
-        console.log("easy questions");
     } else if (difficulty == medium) {
         currentQuestion = mediumQuestions[currentQuestionIndexx];
-        console.log("medium questions");
     } else {
         currentQuestion = hardQuestions[currentQuestionIndexx];
-        console.log("hard questions");
     }
     questionElement.innerHTML = currentQuestion.question;
 
@@ -166,7 +155,6 @@ function showQuestion() {
     * Data for the answers will be collected from game.js file
     */
     currentQuestion.answers.forEach(answer => {
-        console.log("answers displayed");
         const answerButton = document.createElement("button");
         answerButton.innerHTML = answer.text;
         answerButton.classList.add("btn");
@@ -178,7 +166,7 @@ function showQuestion() {
         // This Event Listener is to select an answer
         answerButton.addEventListener('click', selectAnswer);
     });
-    
+
 }
 
 
@@ -186,8 +174,6 @@ function showQuestion() {
 * This function will activate as soon as the User selects an answer
 */
 function selectAnswer(event) {
-    console.log(difficulty);
-    console.log("answer selected");
     const selectedAnswerButton = event.target;
     const correctAnswer = selectedAnswerButton.dataset.correct === "true";
 
@@ -196,12 +182,10 @@ function selectAnswer(event) {
     * Also class has been added to decorate/style the correct and wrong answers
     **/
     if (correctAnswer) {
-        console.log("its correct");
         selectedAnswerButton.classList.add("correct-answer");
         score++;
         addCorrectAnswersScore();
     } else {
-        console.log("its wrong");
         selectedAnswerButton.classList.add("wrong-answer");
     }
 
@@ -211,7 +195,6 @@ function selectAnswer(event) {
             button.classList.add("correct-answer");
         }
         button.disabled = true;
-        console.log("answers locked");
     });
 
     // Once answer is selected whether is correct or wrong it will automatically move to the next one
@@ -231,9 +214,6 @@ function showScore() {
     questionElement.innerHTML = `Well done ${username} in completing the quiz!` +
         `<br> You have answered ${score} correct out of ${maxQuestions} questions!`;
 
-    let endScore = document.getElementById('correct-answers-score').innerHTML;
-    localStorage.setItem('correct-answers-score', endScore);
-
     // This will display Main Menu button
     backToIndexButton.style.display = 'block';
 
@@ -242,7 +222,6 @@ function showScore() {
 
     // This will Hide the back button
     backToDifficultyMenu.style.display = 'none';
-    
 }
 
 
@@ -253,7 +232,6 @@ function showScore() {
 function handleNextQuestion() {
     if (currentQuestionIndex < maxQuestions) {
         showQuestion();
-        console.log("next question shown");
     } else {
         showScore();
     }
@@ -290,18 +268,22 @@ function selectScoreboard() {
 function showScoreboard() {
     let showScoreList = document.getElementById("scoreboard-list");
     const username = localStorage.getItem('username');
-    const endScore = localStorage.getItem('correct-answers-score');
-    const scoreboard = JSON.parse(localStorage.getItem('highScores')) || [];
+    const endScore = localStorage.getItem('score');
+    const scoreboard = JSON.parse(localStorage.getItem('scoreboard')) || [];
     let score = {
         score: endScore,
         username: `${username}`
     };
-    
-    scoreboard.push(score);
-    showScoreList.innerHTML = scoreboard
-        .map(score => {
-            return `<li class="score-list">${score.username} - ${score.score}</li>`;
-        })
-        .join("");
-    
+    if (score.score > 1) {
+        scoreboard.push(score);
+        showScoreList.innerHTML = scoreboard
+            .map(score => {
+                return `<li class="score-list">${score.username} - ${score.score}</li>`;
+            })
+            .join("");
+    } else {
+        showScoreList.innerHTML = "";
+    };
+
+
 }

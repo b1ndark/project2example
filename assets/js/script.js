@@ -276,6 +276,12 @@ function showScoreboard() {
     };
     if (score.score > 1) {
         scoreboard.push(score);
+        // To sort scores in order from the highest at the top to the lowest at the bottom
+        scoreboard.sort((a, b) => b.score - a.score);
+        // Keeps the top 5 scores by removing the lowest ones from the array
+        scoreboard.splice(5);
+        // To convert into a string
+        localStorage.setItem('scoreboard', JSON.stringify((scoreboard)));
         showScoreList.innerHTML = scoreboard
             .map(score => {
                 return `<li class="score-list">${score.username} - ${score.score}</li>`;

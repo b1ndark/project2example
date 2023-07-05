@@ -182,8 +182,15 @@ function selectAnswer(event) {
     * Also class has been added to decorate/style the correct and wrong answers
     **/
     if (correctAnswer) {
+        if (difficulty == easy) {
+            score++;
+        } else if (difficulty == medium) {
+            score += 10;
+        } else {
+            score += 20;
+        }
         selectedAnswerButton.classList.add("correct-answer");
-        score++;
+        
         addCorrectAnswersScore();
     } else {
         selectedAnswerButton.classList.add("wrong-answer");
@@ -212,7 +219,7 @@ function showScore() {
     resetState();
     let username = localStorage.getItem('username');
     questionElement.innerHTML = `Well done ${username} in completing the quiz!` +
-        `<br> You have answered ${score} correct out of ${maxQuestions} questions!`;
+        `<br> You have scored a total of ${score} points!`;
 
     // This will display Main Menu button
     backToIndexButton.style.display = 'block';
@@ -248,7 +255,7 @@ usernameInput.addEventListener('keyup', () => {
 });
 
 submitButton.addEventListener('mousedown', () => {
-    startButton.disabled = !submitButton == 'none';
+    startButton.disabled = submitButton == 'none';
 })
 
 function usernameSubmit() {
@@ -274,7 +281,8 @@ function showScoreboard() {
         score: endScore,
         username: `${username}`
     };
-    if (score.score > 1) {
+
+    if (score.score > 0) {
         scoreboard.push(score);
         // To sort scores in order from the highest at the top to the lowest at the bottom
         scoreboard.sort((a, b) => b.score - a.score);

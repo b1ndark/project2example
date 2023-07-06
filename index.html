@@ -40,7 +40,7 @@
             <div id="start-menu" class="btn-display-normal btn-display">
                 <button id="start-btn" class="btn-other btn start-btn" disabled>Start</button>
                 <button id="instructions-btn" class="btn-other btn instructions">Instructions</button>
-                <button id="scoreboard-btn" class="btn-other btn scoreboard" onclick="selectScoreboard()">Scoreboard</button>
+                <button id="scoreboard-btn" class="btn-other btn scoreboard" disabled onclick="selectScoreboard()">Scoreboard</button>
             </div>
             <div id="form-display" class="form">
                 <label for="username" class="username-label">Username:</label>
@@ -106,7 +106,7 @@
                 <!-- Answer buttons will be created with JavaScript with its respective answers for the question -->
             </div>
             <button id="back-to-difficulty-menu" class="btn-back btn">Back</button>
-            <a href="index.html" id="back-to-index-btn" class="btn-other btn hide">Main Menu</a>
+            <button id="back-to-index-btn" class="btn-other btn hide" onclick="selectMainMenu()">Main Menu</button>
         </div>
 
         <!-- Instructions container -->

@@ -8,6 +8,7 @@ const closeInstructionsButton = document.getElementById("close-instructions-btn"
 const backToIndexButton = document.getElementById("back-to-index-btn");
 const backToDifficultyMenu = document.getElementById("back-to-difficulty-menu");
 const difficultyBackToMainMenu = document.getElementById("difficultyBackToMainMenu");
+const scoreboardButton = document.getElementById("scoreboard-btn");
 
 const questionElement = document.getElementById("question");
 const answerButtons = document.getElementById("answer-buttons");
@@ -55,6 +56,7 @@ function selectMainMenu() {
     instructionsContainerElement.classList.add('hide');
     startMenu.classList.remove('hide');
     scoreboardContainerElement.classList.add('hide');
+    questionContainerElement.classList.add('hide');
 }
 
 
@@ -125,7 +127,7 @@ maxQuestions = 4;
 
 function showQuestion() {
     resetState();
-    const currentQuestionIndexx = Math.floor(Math.random() * 4);
+    let easyQuestionss = easyQuestions.sort(() => Math.random() - 0.5).slice(0, 4);
     /**
     * This function will show current question
     * Data for the questions will be collected from game.js file
@@ -133,11 +135,11 @@ function showQuestion() {
     */
 
     if (difficulty == easy) {
-        currentQuestion = easyQuestions[currentQuestionIndexx];
+        currentQuestion = easyQuestionss[currentQuestionIndex];
     } else if (difficulty == medium) {
-        currentQuestion = mediumQuestions[currentQuestionIndexx];
+        currentQuestion = mediumQuestions[currentQuestionIndex];
     } else {
-        currentQuestion = hardQuestions[currentQuestionIndexx];
+        currentQuestion = hardQuestions[currentQuestionIndex];
     }
     questionElement.innerHTML = currentQuestion.question;
 
@@ -190,7 +192,7 @@ function selectAnswer(event) {
             score += 20;
         }
         selectedAnswerButton.classList.add("correct-answer");
-        
+
         addCorrectAnswersScore();
     } else {
         selectedAnswerButton.classList.add("wrong-answer");
@@ -229,6 +231,8 @@ function showScore() {
 
     // This will Hide the back button
     backToDifficultyMenu.style.display = 'none';
+
+
 }
 
 
@@ -256,7 +260,13 @@ usernameInput.addEventListener('keyup', () => {
 
 submitButton.addEventListener('mousedown', () => {
     startButton.disabled = submitButton == 'none';
+    scoreboardButton.disabled = submitButton == 'none';
 })
+
+closeInstructionsButton.addEventListener('click', () => {
+    
+})
+
 
 function usernameSubmit() {
     let inputUsername = document.getElementById("usernameInput").value;
@@ -270,6 +280,9 @@ function selectScoreboard() {
     startMenu.classList.add('hide');
     scoreboardContainerElement.classList.remove('hide');
     showScoreboard();
+    
+    // to stop scoreboard bug, everytime you repeated countless times going into scoreboard and exit, it would add same score to scoreboard.
+    localStorage.removeItem('score');
 }
 
 function showScoreboard() {
@@ -282,7 +295,11 @@ function showScoreboard() {
         username: `${username}`
     };
 
-    if (score.score > 0) {
+    // This is to prevent from showing null in scoreboard if the user hasn't played yet
+    if (score.score === null || score.score === undefined) {
+        //It won't show null on scoreboard if user hasn't played yet
+        return '';
+    } else {
         scoreboard.push(score);
         // To sort scores in order from the highest at the top to the lowest at the bottom
         scoreboard.sort((a, b) => b.score - a.score);
@@ -295,9 +312,6 @@ function showScoreboard() {
                 return `<li class="score-list">${score.username} - ${score.score}</li>`;
             })
             .join("");
-    } else {
-        showScoreList.innerHTML = "";
-    };
-
-
+        
+    }
 }

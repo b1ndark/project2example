@@ -121,12 +121,23 @@ function resetState() {
 
 maxQuestions = 4;
 
+// This function is to reset everyhting after playing first time, was having issues as the Score Area and Back button weren't being displayed
+function resetQuestionContainer() {
+    // This will display Main Menu button
+    backToIndexButton.style.display = 'none';
+    // This will Hide Score Area
+    scoreAreaDisplay.style.display = 'flex';
+    // This will Hide the back button
+    backToDifficultyMenu.style.display = 'block';
+}
+
 /**
 * This function will show questions and its answers
 */
 
 function showQuestion() {
     resetState();
+    resetQuestionContainer();
     let easyQuestionss = easyQuestions.sort(() => Math.random() - 0.5).slice(0, 4);
     /**
     * This function will show current question
@@ -262,11 +273,6 @@ submitButton.addEventListener('mousedown', () => {
     startButton.disabled = submitButton == 'none';
     scoreboardButton.disabled = submitButton == 'none';
 })
-
-closeInstructionsButton.addEventListener('click', () => {
-    
-})
-
 
 function usernameSubmit() {
     let inputUsername = document.getElementById("usernameInput").value;

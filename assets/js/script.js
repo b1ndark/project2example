@@ -15,9 +15,10 @@ const answerButtons = document.getElementById("answer-buttons");
 const scoreAreaDisplay = document.getElementById("score-area");
 const answeredQuestionsCounter = document.getElementById("answered-question-counter");
 const progressAnsweredQuestionBarFull = document.getElementById("fill-up-progress-question-bar");
-
+const correctAnswerScore = document.getElementById("correct-answers-score");
 
 let currentQuestionIndex = 0;
+let currentQuestionCounterIndex = 0;
 let score = 0;
 let currentQuestion = {};
 let difficulty = "";
@@ -71,12 +72,16 @@ function selectDifficulty() {
     startMenu.classList.add('hide');
     difficultyContainerElement.classList.remove('hide');
     questionContainerElement.classList.add('hide');
+    correctAnswerScore.innerHTML = '0';
 }
 
 /**
  * By pressing back button it will take you back to Difficulty Menu
  */
-backToDifficultyMenu.addEventListener('click', selectDifficulty);
+backToDifficultyMenu.addEventListener('click', () => {
+    confirm('are you sure you want to stop the quiz?');
+    document.location.href="/";
+});
 
 
 /**
@@ -95,6 +100,9 @@ const easy = document.getElementById("easy-btn");
 const medium = document.getElementById("medium-btn");
 const hard = document.getElementById("hard-btn");
 
+
+let totalQuestions = [];
+
 /** 
 * There are three modes Easy, Medium and Hard
 * The game will start on the mode that you have selected
@@ -103,7 +111,7 @@ const hard = document.getElementById("hard-btn");
 function selectQuiz(selectedDifficulty) {
     difficultyContainerElement.classList.add('hide');
     questionContainerElement.classList.remove('hide');
-    currentQuestionIndex = 0;
+    currentQuestionCounterIndex = 0;
     score = 0;
     difficulty = selectedDifficulty;
     showQuestion();
@@ -119,8 +127,10 @@ function resetState() {
     }
 }
 
-maxQuestions = 4;
-
+backToIndexButton.addEventListener('click', () => {
+        document.location.href="/";
+})
+let MAX_QUESTIONS = 4;
 // This function is to reset everyhting after playing first time, was having issues as the Score Area and Back button weren't being displayed
 function resetQuestionContainer() {
     // This will display Main Menu button
@@ -134,11 +144,9 @@ function resetQuestionContainer() {
 /**
 * This function will show questions and its answers
 */
-
 function showQuestion() {
     resetState();
     resetQuestionContainer();
-    let easyQuestionss = easyQuestions.sort(() => Math.random() - 0.5).slice(0, 4);
     /**
     * This function will show current question
     * Data for the questions will be collected from game.js file
@@ -146,21 +154,26 @@ function showQuestion() {
     */
 
     if (difficulty == easy) {
-        currentQuestion = easyQuestionss[currentQuestionIndex];
+        totalQuestions = easyQuestions;
+        currentQuestionIndex = Math.floor(Math.random() * totalQuestions.length);
+        currentQuestion = totalQuestions[currentQuestionIndex];
     } else if (difficulty == medium) {
-        currentQuestion = mediumQuestions[currentQuestionIndex];
+        totalQuestions = mediumQuestions;
+        currentQuestionIndex = Math.floor(Math.random() * totalQuestions.length);
+        currentQuestion = totalQuestions[currentQuestionIndex];
     } else {
-        currentQuestion = hardQuestions[currentQuestionIndex];
+        totalQuestions = hardQuestions;
+        currentQuestionIndex = Math.floor(Math.random() * totalQuestions.length);
+        currentQuestion = totalQuestions[currentQuestionIndex];
     }
     questionElement.innerHTML = currentQuestion.question;
 
     // This will workout what question you are on and display it
-    currentQuestionIndex++;
-    answeredQuestionsCounter.innerHTML = `${currentQuestionIndex}/4`;
+    currentQuestionCounterIndex++;
+    answeredQuestionsCounter.innerHTML = `${currentQuestionCounterIndex}/4`;
 
     // This will display a progression bar
-    progressAnsweredQuestionBarFull.style.width = `${(currentQuestionIndex / maxQuestions) * 100}%`;
-
+    progressAnsweredQuestionBarFull.style.width = `${(currentQuestionCounterIndex / MAX_QUESTIONS) * 100}%`;
 
     /**
     * This function is to show answers of the current question
@@ -179,7 +192,7 @@ function showQuestion() {
         // This Event Listener is to select an answer
         answerButton.addEventListener('click', selectAnswer);
     });
-
+    totalQuestions.splice(currentQuestionIndex, 1);
 }
 
 
@@ -221,6 +234,7 @@ function selectAnswer(event) {
     setTimeout(() => {
         handleNextQuestion();
     }, 1500);
+
 }
 
 
@@ -229,6 +243,7 @@ function selectAnswer(event) {
 * A text message has been added to congratulate the user.
 */
 function showScore() {
+    currentQuestionCounterIndex = 0;
     resetState();
     let username = localStorage.getItem('username');
     questionElement.innerHTML = `Well done ${username} in completing the quiz!` +
@@ -242,8 +257,6 @@ function showScore() {
 
     // This will Hide the back button
     backToDifficultyMenu.style.display = 'none';
-
-
 }
 
 
@@ -252,7 +265,7 @@ function showScore() {
 * Next question Data will be loaded from game.js file
 */
 function handleNextQuestion() {
-    if (currentQuestionIndex < maxQuestions) {
+    if (currentQuestionCounterIndex < 4) {
         showQuestion();
     } else {
         showScore();
@@ -271,7 +284,6 @@ usernameInput.addEventListener('keyup', () => {
 
 submitButton.addEventListener('mousedown', () => {
     startButton.disabled = submitButton == 'none';
-    scoreboardButton.disabled = submitButton == 'none';
 })
 
 function usernameSubmit() {
@@ -286,7 +298,7 @@ function selectScoreboard() {
     startMenu.classList.add('hide');
     scoreboardContainerElement.classList.remove('hide');
     showScoreboard();
-    
+
     // to stop scoreboard bug, everytime you repeated countless times going into scoreboard and exit, it would add same score to scoreboard.
     localStorage.removeItem('score');
 }
@@ -302,7 +314,7 @@ function showScoreboard() {
     };
 
     // This is to prevent from showing null in scoreboard if the user hasn't played yet
-    if (score.score === null || score.score === undefined) {
+    if (score.score === null || score.username === "") {
         //It won't show null on scoreboard if user hasn't played yet
         return '';
     } else {
@@ -318,6 +330,6 @@ function showScoreboard() {
                 return `<li class="score-list">${score.username} - ${score.score}</li>`;
             })
             .join("");
-        
+
     }
 }
